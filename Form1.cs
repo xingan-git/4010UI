@@ -22,7 +22,6 @@ namespace MyTest
         {
             comboBox1.Items.Clear();
             comboBox1.Items.AddRange(SerialPort.GetPortNames());
-            btn_Disconnect.Enabled = false;
             btn_Connect.Enabled = true;
             label_State.Text = "Coose port to connect.";
         }
@@ -36,44 +35,48 @@ namespace MyTest
 
         private void btn_Connect_Click(object sender, EventArgs e)
         {
-            try{
-                serialPort1.PortName = comboBox1.Text;
-                serialPort1.BaudRate = int.Parse(comboBox2.Text);
-                
-                if (serialPort1.IsOpen){
-                    label_State.Text = serialPort1.PortName + "port isent openned.";
-                }
-                else{
-                    serialPort1.Open();
+            if(btn_Connect.Text == "Connect") {
+                try
+                {
+                    serialPort1.PortName = comboBox1.Text;
+                    serialPort1.BaudRate = int.Parse(comboBox2.Text);
+
                     if (serialPort1.IsOpen)
                     {
-                        label_State.Text = serialPort1.PortName + "connect success.";
-                        btn_Connect.Enabled = false;
-                        btn_Disconnect.Enabled = true;
+                        label_State.Text = serialPort1.PortName + " port isent openned.";
+                        btn_Connect.Text = "Disconnect";
                     }
                     else
                     {
-                        label_State.Text = serialPort1.PortName + "Connect unsuccess.";
+                        serialPort1.Open();
+                        if (serialPort1.IsOpen)
+                        {
+                            label_State.Text = serialPort1.PortName + " connect success.";
+                            btn_Connect.Text = "Disconnect";
+                        }
+                        else
+                        {
+                            label_State.Text = serialPort1.PortName + " Connect unsuccess.";
+                        }
                     }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }              
             }
-            catch (Exception ex) {
-                MessageBox.Show(ex.Message);
-            }
-        }
 
-        private void btn_Disconnect_Click(object sender, EventArgs e)
-        {
-            serialPort1.Close();
-            if (serialPort1.IsOpen)
-            {
-                label_State.Text = serialPort1.PortName + "disconnect unsuccess.";
-            }
-            else
-            {
-                label_State.Text = "Coose port to connect.";
-                btn_Connect.Enabled = true;
-                btn_Disconnect.Enabled = false;
+            else {              
+                serialPort1.Close();
+                if (serialPort1.IsOpen)
+                {
+                    label_State.Text = serialPort1.PortName + " disconnect unsuccess.";
+                }
+                else
+                {
+                    label_State.Text = "Coose port to connect.";
+                    btn_Connect.Text = "Connect";
+                }
             }
         }
 
@@ -102,7 +105,5 @@ namespace MyTest
             }
             else { }
         }
-
-        
     }
 }
