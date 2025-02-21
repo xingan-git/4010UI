@@ -12,6 +12,7 @@ using System.Reflection;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Xml.Linq;
 using System.Threading;
+using System.IO;
 
 namespace MyTest
 {
@@ -110,6 +111,12 @@ namespace MyTest
             btn_MS.Enabled = false;
             btn_TS.Enabled = false;
             btn_ClnList.Enabled = false;
+
+            string strResult = "Computer Time,Diluted Gases,Diluent MFC (Control),Diluent MFC (Monitor),Source MFC (Control),Source MFC (Monitor),Total Flow\n";
+            using (StreamWriter strwrite = new StreamWriter("D:\\Intern\\mytest\\WindowsFromsApp_test\\4010auto.csv", true, Encoding.Default))
+            {
+                strwrite.Write(strResult);//將上面的值填入表格內
+            }
         }
 
         private void btn_CmdStop_Click(object sender, EventArgs e)
@@ -122,6 +129,20 @@ namespace MyTest
             listView1.Items.Clear();
         }
 
+        private void btn_InputRate_Click(object sender, EventArgs e)
+        {
+            Variable.UpdateRate = int.Parse(UpdateRate_Box.Text)*1000;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string strResult = "Computer Time,Diluted Gases,Diluent MFC (Control),Diluent MFC (Monitor),Source MFC (Control),Source MFC (Monitor),Total Flow\n";     
+            using (StreamWriter strwrite = new StreamWriter("D:\\Intern\\mytest\\WindowsFromsApp_test\\4010auto.csv", true, Encoding.Default))
+            {
+                strwrite.Write(strResult);//將上面的值填入表格內
+            }
+        }
+
         /*********************************************************************
                                    receive & write
         *********************************************************************/
@@ -129,9 +150,12 @@ namespace MyTest
         private ManualResetEvent EndLineReceived = new ManualResetEvent(false);
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
+
+            Console.WriteLine("DataReceived triggered!");
             if (btn_Connect.Text == "Disconnect")
             {
                 Variable.RxString += serialPort1.ReadExisting();
+                
                 Variable.RxInfo = Variable.RxString.Replace("\u0006", "[ACK]\n");
                 Variable.RxInfo = Variable.RxInfo.Replace("\u000D", "[CR]\n");
 
@@ -139,12 +163,10 @@ namespace MyTest
                 {
                     ackReceived.Set();
                 }
-                if (Variable.RxString.EndsWith("\r"))
+                if (Variable.RxString.EndsWith("\r") && Variable.RxString.Length > 6)
                 {
                     EndLineReceived.Set();
                 }
-
-                Invoke(new EventHandler(display_info));
             }
             else { }
         }
@@ -153,7 +175,7 @@ namespace MyTest
         private void serialPort1_DataSend(string command, string fun)
         {
             string Rxtest = "";
-            Variable.CmdStatus = 0;
+            //Variable.CmdStatus = 0;
             int send_count = 0;
             int scan_count = 0;
 
@@ -161,12 +183,13 @@ namespace MyTest
             {
                 if (serialPort1.IsOpen)
                 {
-                    ackReceived.Reset();
-                    EndLineReceived.Reset();
+                    //ackReceived.Reset();
+                    //EndLineReceived.Reset();
                     Info_Box.AppendText(command + '\n');
                     Variable.RxString = "";
+                    Console.WriteLine(command);
                     serialPort1.WriteLine(command + '\r' + '\n');
-                    Thread.Sleep(500);
+                    Thread.Sleep(100);
                     //Rxtest = serialPort1.ReadExisting();
                 }
                 else
@@ -190,6 +213,7 @@ namespace MyTest
                     if (ackReceived.WaitOne(5000))  // 等待 1 秒
                     {
                         Variable.CmdStatus = 1;
+                        display_info();
                         break;  // 收到 ACK，跳出迴圈
                     }
 
@@ -213,10 +237,10 @@ namespace MyTest
                         scan_count++;
                     }
                     scan_count = 0;*/
-                    Thread.Sleep(100);
-                    if (Variable.RxString.EndsWith("\r"))  // 等待 1 秒
+                    if (EndLineReceived.WaitOne(1000))  // 等待 1 秒
                     {
                         Variable.CmdStatus = 1;
+                        display_info();
                         break;  // 收到 ACK，跳出迴圈
                     }
 
@@ -253,13 +277,16 @@ namespace MyTest
                 {
                     Thread.Sleep(100); // 每 100ms 檢查一次
                 }
-                timer_command.Enabled = false;
+
+                timer_command.Stop();
+                timer_getStatus_D.Stop();
+                timer_getStatus_G.Stop();
                 Variable.CmdStatus = -2;
                 serialPort1_DataSend(command, "set point or stop");
                 timer_command.Enabled = true;
-
                 timer_getStatus_D.Start();
                 timer_getStatus_G.Start();
+
                 if (Variable.CmdStatus == -1)
                 {
                     return;
@@ -284,35 +311,92 @@ namespace MyTest
 
         private void timer_getStatus_D_Tick(object sender, EventArgs e)
         {
-            timer_getStatus_D.Interval = 5000;
+            timer_getStatus_D.Interval = Variable.UpdateRate;
             while (Variable.CmdStatus == -2)
             {
                 Thread.Sleep(100); // 每 100ms 檢查一次
             }
             Variable.CmdStatus = -2;
             serialPort1_DataSend("@GS,001,D", "get status");
-            String dilutiondata = Variable.RxString;
-            label_Status1.Text = dilutiondata;
-        }
-
-        private void timer_getStatus_G_Tick(object sender, EventArgs e)
-        {
+            string dilution = Variable.RxString;
+            Variable.RxString = "";
+            dilution = dilution.Replace("\r", "");
+            string[] dilution_list = dilution.Split(',');
+            if(dilution_list.Length != 11)
+            {
+                Array.Resize(ref dilution_list, 11);
+                for (int i = dilution_list.Length-1; i < 11; i++)
+                {
+                    dilution_list[i] = "Miss";
+                }
+            }
             Thread.Sleep(100);
-            timer_getStatus_G.Interval = 5000;
+
+            /////////////////////////////////////////////////////
             while (Variable.CmdStatus == -2)
             {
                 Thread.Sleep(100); // 每 100ms 檢查一次
             }
             Variable.CmdStatus = -2;
             serialPort1_DataSend("@GS,001,G", "get status");
-            String gas = Variable.RxString;
-            label_Status2.Text = gas;
+            string gas = Variable.RxString;
+            if (gas.IndexOf('\r') != -1)
+            {
+                gas = gas.Substring(gas.IndexOf('\r') + 1);
+            }
+            Variable.RxString = "";
+            gas = gas.Replace("\r", "");
+            string[] gas_list = gas.Split(',');
+            Thread.Sleep(100);
+
+            string strResult = string.Empty;
+            if (gas_list.Length == 3)
+            {
+                label_Status1.Text = "Nothing";
+                label_Status2.Text = "Nothing";
+                label_Measure6.Text = gas_list[0];
+            }
+            else if(gas_list.Length < 3)
+            {
+                label_Status1.Text = "Miss";
+                label_Status2.Text = "Miss";
+                label_Measure6.Text = "Miss";
+            }
+            else
+            {
+                label_Status1.Text = gas_list[2];
+                label_Status2.Text = gas_list[3];
+                label_Measure6.Text = gas_list[0];
+            }           
+            label_Measure1.Text = dilution_list[0] != null ? dilution_list[0] : "Miss" ;
+            label_Measure2.Text = dilution_list[1] != null ? dilution_list[1] : "Miss";
+            label_Measure3.Text = dilution_list[4] != null ? dilution_list[4] : "Miss";
+            label_Measure4.Text = dilution_list[5] != null ? dilution_list[5] : "Miss";
+            label_Measure6.Text = gas_list[0] != null ? gas_list[0] : "Miss";
+
+            strResult += DateTime.Now.ToString("HH:mm:ss") + ',';
+            strResult += label_Status2.Text + ',';
+            strResult += label_Measure1.Text + ',';
+            strResult += label_Measure2.Text + ',';
+            strResult += label_Measure3.Text + ',';
+            strResult += label_Measure4.Text + ',';
+            strResult += label_Measure6.Text + '\n';
+            using (StreamWriter strwrite = new StreamWriter("D:\\Intern\\mytest\\WindowsFromsApp_test\\4010auto.csv", true, Encoding.Default))
+            {
+                strwrite.Write(strResult);//將上面的值填入表格內
+            }
+        }
+
+        private void timer_getStatus_G_Tick(object sender, EventArgs e)
+        {
+            timer_getStatus_G.Interval = 5000;
+            
         }
 
         /*********************************************************************
                                          other
         *********************************************************************/
-        private void display_info(object s, EventArgs e) {
+        private void display_info() {
             Info_Box.AppendText(Variable.RxInfo);
         }
 
@@ -369,6 +453,11 @@ namespace MyTest
         {
             this.Info_Box.SelectionStart = this.Info_Box.TextLength;
             this.Info_Box.ScrollToCaret();
+        }
+
+        private void brn_InfoCln_Click(object sender, EventArgs e)
+        {
+            Info_Box.Clear();
         }
 
         

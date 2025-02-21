@@ -101,6 +101,7 @@ namespace MyTest
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btn_test = new System.Windows.Forms.Button();
+            this.brn_InfoCln = new System.Windows.Forms.Button();
             this.flowLayoutPanel19 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.label30 = new System.Windows.Forms.Label();
@@ -112,6 +113,7 @@ namespace MyTest
             this.timer_command = new System.Windows.Forms.Timer(this.components);
             this.timer_getStatus_D = new System.Windows.Forms.Timer(this.components);
             this.timer_getStatus_G = new System.Windows.Forms.Timer(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -139,10 +141,8 @@ namespace MyTest
             // 
             // serialPort1
             // 
-            this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
-            this.serialPort1.ReceivedBytesThreshold = 1;
-            this.serialPort1.DtrEnable = true;
             this.serialPort1.RtsEnable = true;
+            this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
             // 
             // btn_Connect
             // 
@@ -314,6 +314,7 @@ namespace MyTest
             this.flowLayoutPanel3.Controls.Add(this.flowLayoutPanel11);
             this.flowLayoutPanel3.Controls.Add(this.flowLayoutPanel9);
             this.flowLayoutPanel3.Controls.Add(this.flowLayoutPanel12);
+            this.flowLayoutPanel3.Controls.Add(this.button1);
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(614, 72);
             this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(10, 20, 10, 10);
@@ -373,6 +374,7 @@ namespace MyTest
             this.btn_InputRate.TabIndex = 20;
             this.btn_InputRate.Text = "OK";
             this.btn_InputRate.UseVisualStyleBackColor = false;
+            this.btn_InputRate.Click += new System.EventHandler(this.btn_InputRate_Click);
             // 
             // btn_CheckNow
             // 
@@ -669,7 +671,7 @@ namespace MyTest
             this.label25.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
             this.label25.Size = new System.Drawing.Size(120, 31);
             this.label25.TabIndex = 29;
-            this.label25.Text = "Source MFC";
+            this.label25.Text = "Total Flow";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // flowLayoutPanel17
@@ -867,6 +869,7 @@ namespace MyTest
             this.flowLayoutPanel10.Controls.Add(this.Info_Box);
             this.flowLayoutPanel10.Controls.Add(this.command_box);
             this.flowLayoutPanel10.Controls.Add(this.btn_test);
+            this.flowLayoutPanel10.Controls.Add(this.brn_InfoCln);
             this.flowLayoutPanel10.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel10.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.flowLayoutPanel10.Name = "flowLayoutPanel10";
@@ -1070,6 +1073,16 @@ namespace MyTest
             this.btn_test.UseVisualStyleBackColor = true;
             this.btn_test.Click += new System.EventHandler(this.btn_test_Click);
             // 
+            // brn_InfoCln
+            // 
+            this.brn_InfoCln.Location = new System.Drawing.Point(3, 376);
+            this.brn_InfoCln.Name = "brn_InfoCln";
+            this.brn_InfoCln.Size = new System.Drawing.Size(75, 23);
+            this.brn_InfoCln.TabIndex = 25;
+            this.brn_InfoCln.Text = "clean";
+            this.brn_InfoCln.UseVisualStyleBackColor = true;
+            this.brn_InfoCln.Click += new System.EventHandler(this.brn_InfoCln_Click);
+            // 
             // flowLayoutPanel19
             // 
             this.flowLayoutPanel19.Controls.Add(this.tableLayoutPanel7);
@@ -1177,6 +1190,16 @@ namespace MyTest
             // timer_getStatus_G
             // 
             this.timer_getStatus_G.Tick += new System.EventHandler(this.timer_getStatus_G_Tick);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(3, 346);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "capture";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -1314,6 +1337,8 @@ namespace MyTest
         private Timer timer_getStatus_D;
         private Button btn_test;
         private Timer timer_getStatus_G;
+        private Button brn_InfoCln;
+        private Button button1;
     }
 }
 

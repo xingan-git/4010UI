@@ -13,5 +13,6 @@ public class Variable
     public static int CmdIndex = 0;
     public static int CmdTimeCount = 0;
     public static string StatusBuf = "";
+    public static int UpdateRate = 5000;
 }
 
