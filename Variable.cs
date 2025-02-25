@@ -14,5 +14,7 @@ public class Variable
     public static int CmdTimeCount = 0;
     public static string StatusBuf = "";
     public static int UpdateRate = 5000;
+    public static string FileName = "";
+    public static float CsvTimeCount = 0;
 }
 

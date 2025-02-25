@@ -36,7 +36,6 @@ namespace MyTest
             this.btn_Connect = new System.Windows.Forms.Button();
             this.label_State = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.command_box = new System.Windows.Forms.TextBox();
             this.btn_CmdStart = new System.Windows.Forms.Button();
             this.Info_Box = new System.Windows.Forms.RichTextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -49,8 +48,7 @@ namespace MyTest
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel11 = new System.Windows.Forms.FlowLayoutPanel();
             this.label9 = new System.Windows.Forms.Label();
-            this.UpdateRate_Box = new System.Windows.Forms.TextBox();
-            this.btn_InputRate = new System.Windows.Forms.Button();
+            this.UpdateRate_Box = new System.Windows.Forms.ComboBox();
             this.btn_CheckNow = new System.Windows.Forms.Button();
             this.flowLayoutPanel9 = new System.Windows.Forms.FlowLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
@@ -59,8 +57,8 @@ namespace MyTest
             this.label11 = new System.Windows.Forms.Label();
             this.flowLayoutPanel14 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label_Status2 = new System.Windows.Forms.Label();
             this.label_Status1 = new System.Windows.Forms.Label();
+            this.label_Status2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label14 = new System.Windows.Forms.Label();
             this.flowLayoutPanel12 = new System.Windows.Forms.FlowLayoutPanel();
@@ -98,9 +96,11 @@ namespace MyTest
             this.Time_Box = new System.Windows.Forms.TextBox();
             this.btn_MS = new System.Windows.Forms.Button();
             this.btn_TS = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel8 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.FileName_Box = new System.Windows.Forms.TextBox();
+            this.btn_cap = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.btn_test = new System.Windows.Forms.Button();
             this.brn_InfoCln = new System.Windows.Forms.Button();
             this.flowLayoutPanel19 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
@@ -110,10 +110,11 @@ namespace MyTest
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btn_CmdStop = new System.Windows.Forms.Button();
             this.btn_ClnList = new System.Windows.Forms.Button();
+            this.command_box = new System.Windows.Forms.TextBox();
+            this.btn_test = new System.Windows.Forms.Button();
             this.timer_command = new System.Windows.Forms.Timer(this.components);
-            this.timer_getStatus_D = new System.Windows.Forms.Timer(this.components);
-            this.timer_getStatus_G = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
+            this.timer_getStatus = new System.Windows.Forms.Timer(this.components);
+            this.btn_Purge = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -135,6 +136,7 @@ namespace MyTest
             this.flowLayoutPanel5.SuspendLayout();
             this.flowLayoutPanel10.SuspendLayout();
             this.flowLayoutPanel6.SuspendLayout();
+            this.flowLayoutPanel8.SuspendLayout();
             this.flowLayoutPanel19.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.SuspendLayout();
@@ -168,7 +170,7 @@ namespace MyTest
             this.label_State.Margin = new System.Windows.Forms.Padding(10);
             this.label_State.Name = "label_State";
             this.label_State.Padding = new System.Windows.Forms.Padding(2, 6, 25, 6);
-            this.label_State.Size = new System.Drawing.Size(267, 32);
+            this.label_State.Size = new System.Drawing.Size(267, 31);
             this.label_State.TabIndex = 3;
             this.label_State.Text = "Choose port to connect.";
             // 
@@ -187,14 +189,6 @@ namespace MyTest
             this.comboBox2.Size = new System.Drawing.Size(103, 31);
             this.comboBox2.TabIndex = 4;
             // 
-            // command_box
-            // 
-            this.command_box.Location = new System.Drawing.Point(2, 346);
-            this.command_box.Margin = new System.Windows.Forms.Padding(2);
-            this.command_box.Name = "command_box";
-            this.command_box.Size = new System.Drawing.Size(76, 22);
-            this.command_box.TabIndex = 5;
-            // 
             // btn_CmdStart
             // 
             this.btn_CmdStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -212,10 +206,10 @@ namespace MyTest
             // Info_Box
             // 
             this.Info_Box.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Info_Box.Location = new System.Drawing.Point(0, 208);
+            this.Info_Box.Location = new System.Drawing.Point(0, 314);
             this.Info_Box.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.Info_Box.Name = "Info_Box";
-            this.Info_Box.Size = new System.Drawing.Size(202, 126);
+            this.Info_Box.Size = new System.Drawing.Size(202, 140);
             this.Info_Box.TabIndex = 8;
             this.Info_Box.Text = "";
             this.Info_Box.TextChanged += new System.EventHandler(this.Info_Box_TextChanged);
@@ -270,11 +264,9 @@ namespace MyTest
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.17613F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.82388F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1144, 511);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1144, 609);
             this.tableLayoutPanel1.TabIndex = 11;
             // 
             // flowLayoutPanel1
@@ -286,7 +278,7 @@ namespace MyTest
             this.flowLayoutPanel1.Location = new System.Drawing.Point(10, 10);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(10);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(584, 32);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(584, 31);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // flowLayoutPanel2
@@ -314,19 +306,19 @@ namespace MyTest
             this.flowLayoutPanel3.Controls.Add(this.flowLayoutPanel11);
             this.flowLayoutPanel3.Controls.Add(this.flowLayoutPanel9);
             this.flowLayoutPanel3.Controls.Add(this.flowLayoutPanel12);
-            this.flowLayoutPanel3.Controls.Add(this.button1);
+            this.flowLayoutPanel3.Controls.Add(this.btn_Purge);
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(614, 72);
-            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(10, 20, 10, 10);
+            this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(614, 103);
+            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(10, 52, 10, 10);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(520, 429);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(520, 496);
             this.flowLayoutPanel3.TabIndex = 11;
             // 
             // flowLayoutPanel11
             // 
             this.flowLayoutPanel11.Controls.Add(this.label9);
             this.flowLayoutPanel11.Controls.Add(this.UpdateRate_Box);
-            this.flowLayoutPanel11.Controls.Add(this.btn_InputRate);
             this.flowLayoutPanel11.Controls.Add(this.btn_CheckNow);
             this.flowLayoutPanel11.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel11.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
@@ -351,30 +343,20 @@ namespace MyTest
             // 
             // UpdateRate_Box
             // 
-            this.UpdateRate_Box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.UpdateRate_Box.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpdateRate_Box.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.UpdateRate_Box.Font = new System.Drawing.Font("Consolas", 15F);
+            this.UpdateRate_Box.FormattingEnabled = true;
+            this.UpdateRate_Box.Items.AddRange(new object[] {
+            "5",
+            "10",
+            "20",
+            "30",
+            "60"});
             this.UpdateRate_Box.Location = new System.Drawing.Point(160, 0);
             this.UpdateRate_Box.Margin = new System.Windows.Forms.Padding(0);
             this.UpdateRate_Box.Name = "UpdateRate_Box";
-            this.UpdateRate_Box.Size = new System.Drawing.Size(75, 31);
-            this.UpdateRate_Box.TabIndex = 20;
-            this.UpdateRate_Box.Text = "5";
-            // 
-            // btn_InputRate
-            // 
-            this.btn_InputRate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_InputRate.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_InputRate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_InputRate.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_InputRate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_InputRate.Location = new System.Drawing.Point(235, 0);
-            this.btn_InputRate.Margin = new System.Windows.Forms.Padding(0, 0, 93, 0);
-            this.btn_InputRate.Name = "btn_InputRate";
-            this.btn_InputRate.Size = new System.Drawing.Size(69, 31);
-            this.btn_InputRate.TabIndex = 20;
-            this.btn_InputRate.Text = "OK";
-            this.btn_InputRate.UseVisualStyleBackColor = false;
-            this.btn_InputRate.Click += new System.EventHandler(this.btn_InputRate_Click);
+            this.UpdateRate_Box.Size = new System.Drawing.Size(67, 31);
+            this.UpdateRate_Box.TabIndex = 30;
             // 
             // btn_CheckNow
             // 
@@ -384,12 +366,13 @@ namespace MyTest
             this.btn_CheckNow.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CheckNow.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_CheckNow.Location = new System.Drawing.Point(407, 0);
-            this.btn_CheckNow.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_CheckNow.Margin = new System.Windows.Forms.Padding(180, 0, 0, 0);
             this.btn_CheckNow.Name = "btn_CheckNow";
             this.btn_CheckNow.Size = new System.Drawing.Size(113, 31);
             this.btn_CheckNow.TabIndex = 21;
             this.btn_CheckNow.Text = "Check now";
             this.btn_CheckNow.UseVisualStyleBackColor = false;
+            this.btn_CheckNow.Click += new System.EventHandler(this.btn_CheckNow_Click);
             // 
             // flowLayoutPanel9
             // 
@@ -399,7 +382,7 @@ namespace MyTest
             this.flowLayoutPanel9.Location = new System.Drawing.Point(0, 57);
             this.flowLayoutPanel9.Margin = new System.Windows.Forms.Padding(0, 15, 0, 10);
             this.flowLayoutPanel9.Name = "flowLayoutPanel9";
-            this.flowLayoutPanel9.Size = new System.Drawing.Size(520, 95);
+            this.flowLayoutPanel9.Size = new System.Drawing.Size(520, 98);
             this.flowLayoutPanel9.TabIndex = 28;
             // 
             // label8
@@ -423,7 +406,7 @@ namespace MyTest
             this.flowLayoutPanel13.Location = new System.Drawing.Point(0, 31);
             this.flowLayoutPanel13.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel13.Name = "flowLayoutPanel13";
-            this.flowLayoutPanel13.Size = new System.Drawing.Size(160, 60);
+            this.flowLayoutPanel13.Size = new System.Drawing.Size(160, 67);
             this.flowLayoutPanel13.TabIndex = 26;
             // 
             // label10
@@ -463,7 +446,7 @@ namespace MyTest
             this.flowLayoutPanel14.Location = new System.Drawing.Point(160, 31);
             this.flowLayoutPanel14.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel14.Name = "flowLayoutPanel14";
-            this.flowLayoutPanel14.Size = new System.Drawing.Size(360, 60);
+            this.flowLayoutPanel14.Size = new System.Drawing.Size(360, 67);
             this.flowLayoutPanel14.TabIndex = 26;
             // 
             // tableLayoutPanel2
@@ -471,30 +454,16 @@ namespace MyTest
             this.tableLayoutPanel2.BackColor = System.Drawing.Color.LightGray;
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.label_Status2, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label_Status1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label_Status2, 0, 1);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(296, 60);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(296, 67);
             this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // label_Status2
-            // 
-            this.label_Status2.AutoSize = true;
-            this.label_Status2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label_Status2.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Status2.Location = new System.Drawing.Point(0, 30);
-            this.label_Status2.Margin = new System.Windows.Forms.Padding(0);
-            this.label_Status2.Name = "label_Status2";
-            this.label_Status2.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.label_Status2.Size = new System.Drawing.Size(40, 30);
-            this.label_Status2.TabIndex = 25;
-            this.label_Status2.Text = "--";
-            this.label_Status2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label_Status1
             // 
@@ -505,10 +474,24 @@ namespace MyTest
             this.label_Status1.Margin = new System.Windows.Forms.Padding(0);
             this.label_Status1.Name = "label_Status1";
             this.label_Status1.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.label_Status1.Size = new System.Drawing.Size(40, 30);
+            this.label_Status1.Size = new System.Drawing.Size(40, 31);
             this.label_Status1.TabIndex = 24;
             this.label_Status1.Text = "--";
             this.label_Status1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label_Status2
+            // 
+            this.label_Status2.AutoSize = true;
+            this.label_Status2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label_Status2.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Status2.Location = new System.Drawing.Point(0, 33);
+            this.label_Status2.Margin = new System.Windows.Forms.Padding(0);
+            this.label_Status2.Name = "label_Status2";
+            this.label_Status2.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
+            this.label_Status2.Size = new System.Drawing.Size(40, 31);
+            this.label_Status2.TabIndex = 25;
+            this.label_Status2.Text = "--";
+            this.label_Status2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tableLayoutPanel3
             // 
@@ -522,7 +505,7 @@ namespace MyTest
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(64, 60);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(64, 67);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // label14
@@ -530,11 +513,11 @@ namespace MyTest
             this.label14.AutoSize = true;
             this.label14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label14.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(0, 30);
+            this.label14.Location = new System.Drawing.Point(0, 33);
             this.label14.Margin = new System.Windows.Forms.Padding(0);
             this.label14.Name = "label14";
             this.label14.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.label14.Size = new System.Drawing.Size(50, 30);
+            this.label14.Size = new System.Drawing.Size(50, 31);
             this.label14.TabIndex = 25;
             this.label14.Text = "PPB";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -546,7 +529,7 @@ namespace MyTest
             this.flowLayoutPanel12.Controls.Add(this.flowLayoutPanel16);
             this.flowLayoutPanel12.Controls.Add(this.flowLayoutPanel17);
             this.flowLayoutPanel12.Location = new System.Drawing.Point(0, 177);
-            this.flowLayoutPanel12.Margin = new System.Windows.Forms.Padding(0, 15, 0, 10);
+            this.flowLayoutPanel12.Margin = new System.Windows.Forms.Padding(0, 12, 0, 10);
             this.flowLayoutPanel12.Name = "flowLayoutPanel12";
             this.flowLayoutPanel12.Size = new System.Drawing.Size(520, 156);
             this.flowLayoutPanel12.TabIndex = 29;
@@ -856,24 +839,23 @@ namespace MyTest
             this.flowLayoutPanel5.Controls.Add(this.flowLayoutPanel10);
             this.flowLayoutPanel5.Controls.Add(this.flowLayoutPanel19);
             this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(10, 72);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(10, 71);
             this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(10, 20, 10, 10);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(584, 429);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(584, 528);
             this.flowLayoutPanel5.TabIndex = 12;
             // 
             // flowLayoutPanel10
             // 
             this.flowLayoutPanel10.Controls.Add(this.flowLayoutPanel6);
+            this.flowLayoutPanel10.Controls.Add(this.flowLayoutPanel8);
             this.flowLayoutPanel10.Controls.Add(this.label7);
             this.flowLayoutPanel10.Controls.Add(this.Info_Box);
-            this.flowLayoutPanel10.Controls.Add(this.command_box);
-            this.flowLayoutPanel10.Controls.Add(this.btn_test);
             this.flowLayoutPanel10.Controls.Add(this.brn_InfoCln);
-            this.flowLayoutPanel10.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel10.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.flowLayoutPanel10.Location = new System.Drawing.Point(0, 32);
+            this.flowLayoutPanel10.Margin = new System.Windows.Forms.Padding(0, 32, 10, 0);
             this.flowLayoutPanel10.Name = "flowLayoutPanel10";
-            this.flowLayoutPanel10.Size = new System.Drawing.Size(203, 420);
+            this.flowLayoutPanel10.Size = new System.Drawing.Size(203, 494);
             this.flowLayoutPanel10.TabIndex = 3;
             // 
             // flowLayoutPanel6
@@ -888,11 +870,10 @@ namespace MyTest
             this.flowLayoutPanel6.Controls.Add(this.Time_Box);
             this.flowLayoutPanel6.Controls.Add(this.btn_MS);
             this.flowLayoutPanel6.Controls.Add(this.btn_TS);
-            this.flowLayoutPanel6.Controls.Add(this.textBox1);
             this.flowLayoutPanel6.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel6.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.flowLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
-            this.flowLayoutPanel6.Size = new System.Drawing.Size(202, 157);
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(202, 166);
             this.flowLayoutPanel6.TabIndex = 0;
             // 
             // label3
@@ -994,7 +975,7 @@ namespace MyTest
             this.label5.Padding = new System.Windows.Forms.Padding(5, 4, 16, 5);
             this.label5.Size = new System.Drawing.Size(101, 31);
             this.label5.TabIndex = 12;
-            this.label5.Text = "Time(s)";
+            this.label5.Text = "Time(m)";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Time_Box
@@ -1040,21 +1021,58 @@ namespace MyTest
             this.btn_TS.UseVisualStyleBackColor = false;
             this.btn_TS.Click += new System.EventHandler(this.btn_TS_Click);
             // 
-            // textBox1
+            // flowLayoutPanel8
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(0, 155);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(101, 31);
-            this.textBox1.TabIndex = 19;
+            this.flowLayoutPanel8.Controls.Add(this.label12);
+            this.flowLayoutPanel8.Controls.Add(this.FileName_Box);
+            this.flowLayoutPanel8.Controls.Add(this.btn_cap);
+            this.flowLayoutPanel8.Location = new System.Drawing.Point(0, 166);
+            this.flowLayoutPanel8.Margin = new System.Windows.Forms.Padding(0);
+            this.flowLayoutPanel8.Name = "flowLayoutPanel8";
+            this.flowLayoutPanel8.Size = new System.Drawing.Size(203, 107);
+            this.flowLayoutPanel8.TabIndex = 26;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(0, 10);
+            this.label12.Margin = new System.Windows.Forms.Padding(0, 10, 5, 0);
+            this.label12.Name = "label12";
+            this.label12.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
+            this.label12.Size = new System.Drawing.Size(130, 31);
+            this.label12.TabIndex = 27;
+            this.label12.Text = "File name :";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // FileName_Box
+            // 
+            this.FileName_Box.Font = new System.Drawing.Font("Consolas", 15F);
+            this.FileName_Box.Location = new System.Drawing.Point(0, 41);
+            this.FileName_Box.Margin = new System.Windows.Forms.Padding(0);
+            this.FileName_Box.Name = "FileName_Box";
+            this.FileName_Box.Size = new System.Drawing.Size(203, 31);
+            this.FileName_Box.TabIndex = 28;
+            // 
+            // btn_cap
+            // 
+            this.btn_cap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_cap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cap.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btn_cap.Location = new System.Drawing.Point(0, 72);
+            this.btn_cap.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_cap.Name = "btn_cap";
+            this.btn_cap.Size = new System.Drawing.Size(202, 32);
+            this.btn_cap.TabIndex = 25;
+            this.btn_cap.Text = "Capture";
+            this.btn_cap.UseVisualStyleBackColor = false;
+            this.btn_cap.Click += new System.EventHandler(this.btn_cap_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(0, 177);
+            this.label7.Location = new System.Drawing.Point(0, 283);
             this.label7.Margin = new System.Windows.Forms.Padding(0, 10, 5, 0);
             this.label7.Name = "label7";
             this.label7.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
@@ -1063,19 +1081,9 @@ namespace MyTest
             this.label7.Text = "Info :";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // btn_test
-            // 
-            this.btn_test.Location = new System.Drawing.Point(83, 347);
-            this.btn_test.Name = "btn_test";
-            this.btn_test.Size = new System.Drawing.Size(75, 23);
-            this.btn_test.TabIndex = 24;
-            this.btn_test.Text = "send";
-            this.btn_test.UseVisualStyleBackColor = true;
-            this.btn_test.Click += new System.EventHandler(this.btn_test_Click);
-            // 
             // brn_InfoCln
             // 
-            this.brn_InfoCln.Location = new System.Drawing.Point(3, 376);
+            this.brn_InfoCln.Location = new System.Drawing.Point(3, 467);
             this.brn_InfoCln.Name = "brn_InfoCln";
             this.brn_InfoCln.Size = new System.Drawing.Size(75, 23);
             this.brn_InfoCln.TabIndex = 25;
@@ -1090,6 +1098,8 @@ namespace MyTest
             this.flowLayoutPanel19.Controls.Add(this.btn_CmdStart);
             this.flowLayoutPanel19.Controls.Add(this.btn_CmdStop);
             this.flowLayoutPanel19.Controls.Add(this.btn_ClnList);
+            this.flowLayoutPanel19.Controls.Add(this.command_box);
+            this.flowLayoutPanel19.Controls.Add(this.btn_test);
             this.flowLayoutPanel19.Location = new System.Drawing.Point(223, 0);
             this.flowLayoutPanel19.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.flowLayoutPanel19.Name = "flowLayoutPanel19";
@@ -1179,27 +1189,45 @@ namespace MyTest
             this.btn_ClnList.UseVisualStyleBackColor = false;
             this.btn_ClnList.Click += new System.EventHandler(this.btn_ClnList_Click);
             // 
+            // command_box
+            // 
+            this.command_box.Location = new System.Drawing.Point(2, 336);
+            this.command_box.Margin = new System.Windows.Forms.Padding(2);
+            this.command_box.Name = "command_box";
+            this.command_box.Size = new System.Drawing.Size(129, 22);
+            this.command_box.TabIndex = 5;
+            // 
+            // btn_test
+            // 
+            this.btn_test.Location = new System.Drawing.Point(136, 337);
+            this.btn_test.Name = "btn_test";
+            this.btn_test.Size = new System.Drawing.Size(75, 23);
+            this.btn_test.TabIndex = 24;
+            this.btn_test.Text = "send";
+            this.btn_test.UseVisualStyleBackColor = true;
+            this.btn_test.Click += new System.EventHandler(this.btn_test_Click);
+            // 
             // timer_command
             // 
             this.timer_command.Tick += new System.EventHandler(this.timer_command_Tick);
             // 
-            // timer_getStatus_D
+            // timer_getStatus
             // 
-            this.timer_getStatus_D.Tick += new System.EventHandler(this.timer_getStatus_D_Tick);
+            this.timer_getStatus.Tick += new System.EventHandler(this.timer_getStatus_Tick);
             // 
-            // timer_getStatus_G
+            // btn_Purge
             // 
-            this.timer_getStatus_G.Tick += new System.EventHandler(this.timer_getStatus_G_Tick);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(3, 346);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "capture";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_Purge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_Purge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Purge.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btn_Purge.Location = new System.Drawing.Point(407, 363);
+            this.btn_Purge.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
+            this.btn_Purge.Name = "btn_Purge";
+            this.btn_Purge.Size = new System.Drawing.Size(113, 32);
+            this.btn_Purge.TabIndex = 25;
+            this.btn_Purge.Text = "Purge";
+            this.btn_Purge.UseVisualStyleBackColor = false;
+            this.btn_Purge.Click += new System.EventHandler(this.btn_Purge_Click);
             // 
             // Form1
             // 
@@ -1207,7 +1235,7 @@ namespace MyTest
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1144, 511);
+            this.ClientSize = new System.Drawing.Size(1144, 631);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -1249,7 +1277,10 @@ namespace MyTest
             this.flowLayoutPanel10.PerformLayout();
             this.flowLayoutPanel6.ResumeLayout(false);
             this.flowLayoutPanel6.PerformLayout();
+            this.flowLayoutPanel8.ResumeLayout(false);
+            this.flowLayoutPanel8.PerformLayout();
             this.flowLayoutPanel19.ResumeLayout(false);
+            this.flowLayoutPanel19.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
             this.ResumeLayout(false);
@@ -1261,7 +1292,6 @@ namespace MyTest
         private System.Windows.Forms.Button btn_Connect;
         private System.Windows.Forms.Label label_State;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox command_box;
         private System.Windows.Forms.Button btn_CmdStart;
         private System.Windows.Forms.RichTextBox Info_Box;
         private System.Windows.Forms.ComboBox comboBox1;
@@ -1283,12 +1313,9 @@ namespace MyTest
         private TextBox Time_Box;
         private Button btn_MS;
         private FlowLayoutPanel flowLayoutPanel10;
-        private TextBox textBox1;
         private FlowLayoutPanel flowLayoutPanel3;
         private FlowLayoutPanel flowLayoutPanel11;
         private Label label9;
-        private TextBox UpdateRate_Box;
-        private Button btn_InputRate;
         private Button btn_CheckNow;
         private FlowLayoutPanel flowLayoutPanel9;
         private Label label8;
@@ -1334,11 +1361,16 @@ namespace MyTest
         private ColumnHeader columnHeader2;
         private ComboBox Point_Box;
         private Timer timer_command;
-        private Timer timer_getStatus_D;
+        private Timer timer_getStatus;
         private Button btn_test;
-        private Timer timer_getStatus_G;
         private Button brn_InfoCln;
-        private Button button1;
+        private FlowLayoutPanel flowLayoutPanel8;
+        private Label label12;
+        private TextBox FileName_Box;
+        private Button btn_cap;
+        private TextBox command_box;
+        private ComboBox UpdateRate_Box;
+        private Button btn_Purge;
     }
 }
 
