@@ -13,6 +13,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Xml.Linq;
 using System.Threading;
 using System.IO;
+using System.Linq;
 
 namespace MyTest
 {
@@ -39,9 +40,9 @@ namespace MyTest
         }
 
 
-        /*********************************************************************
-                                         button
-        *********************************************************************/
+        /*********************************************************************************************************************
+                                                            button
+        **********************************************************************************************************************/
         private void btn_Connect_Click(object sender, EventArgs e)
         {
             if (btn_Connect.Text == "Connect") {
@@ -103,12 +104,9 @@ namespace MyTest
 
         private void btn_CmdStart_Click(object sender, EventArgs e)
         {
-            Variable.CmdStatus = 0;
             Variable.CmdTimeCount = 0;           
-            Variable.CmdIndex = 0;
-            Variable.RxString = "";            
-            timer_command.Start();
-            
+            Variable.CmdIndex = 0;          
+            timer_command.Start();           
 
             btn_CmdStart.Enabled = false;
             btn_CmdStart.BackColor = System.Drawing.SystemColors.ActiveBorder;
@@ -118,8 +116,6 @@ namespace MyTest
             btn_TS.BackColor = System.Drawing.SystemColors.ActiveBorder;
             btn_ClnList.Enabled = false;
             btn_ClnList.BackColor = System.Drawing.SystemColors.ActiveBorder;      
-            btn_Purge.Enabled = false;
-            btn_Purge.BackColor = System.Drawing.SystemColors.ActiveBorder;
         }
 
         private void btn_CmdStop_Click(object sender, EventArgs e)
@@ -148,7 +144,7 @@ namespace MyTest
                     Variable.CsvTimeCount = 0;
                     Variable.FileName = FileName_Box.Text;
                     string strResult = "Computer Time,Time,Diluted Gases,Diluent MFC (Control),Diluent MFC (Monitor),Source MFC (Control),Source MFC (Monitor),Total Flow(Control),Total Flow(Monitor),Source\n";      
-                    using (StreamWriter strwrite = new StreamWriter("D:\\" + Variable.FileName + ".csv", true, Encoding.Default))
+                    using (StreamWriter strwrite = new StreamWriter("D:\\" + Variable.FileName + ".csv", false, Encoding.Default))
                     {
                         strwrite.Write(strResult);
                     }
@@ -165,18 +161,12 @@ namespace MyTest
 
         private void btn_CheckNow_Click(object sender, EventArgs e)
         {
-            
-            while (Variable.CmdStatus == -2)
-            {
-                Thread.Sleep(100); // 每 100ms 檢查一次
-            }
-            if (serialPort1.IsOpen) { serialPort1.DiscardInBuffer(); }
-            Variable.CmdStatus = -2;                      
             serialPort1_DataSend("@GS,001,D", "get status");
-            if (!serialPort1.IsOpen) { return; }///////////////////////////////  
-            string dilution = serialPort1.ReadExisting();//////////////////////
-            Info_Box.AppendText(dilution.Replace("\u000D", "[CR]\n"));/////////
-            Variable.RxString = "";
+            if (Variable.CmdStatus != 1)
+            {
+                return;
+            }
+            string dilution = Variable.RxString;
             dilution = dilution.Replace("\r", "");
             string[] dilution_list = dilution.Split(',');
             if (dilution_list.Length != 11)
@@ -187,29 +177,19 @@ namespace MyTest
                     dilution_list[i] = "Miss";
                 }
             }
-            Thread.Sleep(100);
-
-            /////////////////////////////////////////////////////
-            while (Variable.CmdStatus == -2)
-            {
-                Thread.Sleep(100); // 每 100ms 檢查一次
-            }
-            Variable.CmdStatus = -2;         
+            /******************************************************/
             serialPort1_DataSend("@GS,001,G", "get status");
-            string gas = serialPort1.ReadExisting();//////////////////////////////
-            Info_Box.AppendText(gas.Replace("\u000D", "[CR]\n"));/////////////////
-            if (gas.IndexOf('\r') != -1)
+            if (Variable.CmdStatus != 1)
             {
-                gas = gas.Substring(gas.IndexOf('\r') + 1);
+                return;
             }
-            Variable.RxString = "";
+            string gas = Variable.RxString;
             gas = gas.Replace("\r", "");
             string[] gas_list = gas.Split(',');
-            Thread.Sleep(100);
 
-            //////////////////////////////////////////////////////
+            /*******************************************************/
+            string strResult = string.Empty;
             gas_list[0] = (float.Parse(gas_list[0]) / 1000).ToString();
-            //int totalflow = int.Parse(dilution_list[0]) + int.Parse(dilution_list[4]) / 1000;
             if (gas_list.Length == 3)
             {
                 label_Status1.Text = "Nothing";
@@ -234,24 +214,40 @@ namespace MyTest
             label_Measure4.Text = dilution_list[5] != null ? dilution_list[5] : "Miss";
             label_Measure5.Text = dilution_list[4] != null ? (float.Parse(dilution_list[0]) + float.Parse(dilution_list[4]) / 1000).ToString() : "Miss";
 
+            LabelFlash();
         }
 
         private void btn_Purge_Click(object sender, EventArgs e)
         {
-            if (serialPort1.IsOpen)
+            serialPort1_DataSend("@P,001", "set point or stop");
+            if (Variable.CmdStatus != 1)
             {
-                serialPort1.WriteLine("@P,001" + '\r' + '\n');
-            }
-            else
-            {
-                MessageBox.Show("Sabio 4010未連線");
                 return;
             }           
         }
 
-        /*********************************************************************
+        bool purgelock = true;
+        private void btn_PurgeLock_Click(object sender, EventArgs e)
+        {
+            if (purgelock == true)
+            {
+                purgelock = false;
+                btn_PurgeLock.BackgroundImage = Properties.Resources.unlock;
+                btn_Purge.Enabled = true;
+                btn_Purge.BackColor = Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            }
+            else
+            {
+                purgelock = true;
+                btn_PurgeLock.BackgroundImage = Properties.Resources._lock;
+                btn_Purge.Enabled = false;
+                btn_Purge.BackColor = SystemColors.ActiveBorder;
+            }
+        }
+
+        /*********************************************************************************************************************
                                    receive & write
-        *********************************************************************/
+        **********************************************************************************************************************/
         private ManualResetEvent ackReceived = new ManualResetEvent(false);
         private ManualResetEvent EndLineReceived = new ManualResetEvent(false);
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
@@ -261,8 +257,9 @@ namespace MyTest
             if (btn_Connect.Text == "Disconnect")
             {
                 
-                /*Variable.RxString += serialPort1.ReadExisting();
-                
+                Variable.RxString += serialPort1.ReadExisting();
+                Console.WriteLine(Variable.RxString);
+
                 Variable.RxInfo = Variable.RxString.Replace("\u0006", "[ACK]\n");
                 Variable.RxInfo = Variable.RxInfo.Replace("\u000D", "[CR]\n");
 
@@ -270,10 +267,20 @@ namespace MyTest
                 {
                     ackReceived.Set();
                 }
-                if (Variable.RxString.EndsWith("\r") && Variable.RxString.Length > 6)
+                if (Variable.StatusMode == 0 || Variable.StatusMode == 1)
                 {
-                    EndLineReceived.Set();
-                }*/
+                    if (Variable.RxString.Count(c => c == '\r') == 2)
+                    {
+                        EndLineReceived.Set();
+                    }
+                }
+                else if(Variable.StatusMode == 2)
+                {
+                    if (Variable.RxString.Count(c => c == '\r') == 3)
+                    {
+                        EndLineReceived.Set();
+                    }
+                }
             }
             else { }
         }
@@ -281,27 +288,24 @@ namespace MyTest
         
         private void serialPort1_DataSend(string command, string fun)
         {
-            string Rxtest = "";
-            //Variable.CmdStatus = 0;
+            Variable.CmdStatus = 0;
+            ackReceived.Reset();
+            EndLineReceived.Reset();
             int send_count = 0;
-            int scan_count = 0;
 
             while (send_count < 5)
             {
                 if (serialPort1.IsOpen)
                 {
-                    //ackReceived.Reset();
-                    //EndLineReceived.Reset();
-                    Info_Box.AppendText(command + '\n');
-                    Variable.RxString = "";
                     Console.WriteLine(command);
+                    Variable.RxString = serialPort1.ReadExisting();//清空buffer
+                    Variable.RxString = "";
                     serialPort1.WriteLine(command + '\r' + '\n');
-                    //Rxtest = serialPort1.ReadExisting();
+                    Info_Box.AppendText(command + '\n');
                 }
                 else//結束流程
                 {
                     Variable.CmdIndex = 0;
-                    Variable.CmdStatus = 0;
                     Variable.CmdTimeCount = 0;
 
                     btn_CmdStart.Enabled = true;
@@ -314,8 +318,6 @@ namespace MyTest
                     btn_ClnList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
                     btn_cap.Text = "Capture";
                     UpdateRate_Box.Enabled = true;
-                    btn_Purge.Enabled = true;
-                    btn_Purge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
                     timer_command.Stop();
                     timer_getStatus.Stop();
                     MessageBox.Show("Sabio 4010未連線");
@@ -324,27 +326,21 @@ namespace MyTest
 
                 if(fun == "set point or stop")
                 {
-                    /*if (ackReceived.WaitOne(5000))  // 等待 1 秒
+                    if (ackReceived.WaitOne(5000))
                     {
                         Variable.CmdStatus = 1;
                         display_info();
                         break;  // 收到 ACK，跳出迴圈
-                    }*/
-                    Thread.Sleep(5000);
-                    Variable.CmdStatus = 1;
-                    return;
+                    }
                 }
                 else if(fun == "get status")
                 {
-                    /*if (EndLineReceived.WaitOne(1000))  // 等待 1 秒
+                    if (EndLineReceived.WaitOne(1000))
                     {
                         Variable.CmdStatus = 1;
                         display_info();
-                        break;  // 收到 ACK，跳出迴圈
-                    }*/
-                    Thread.Sleep(200);
-                    Variable.CmdStatus = 1;
-                    return;
+                        break;  // 收到 \r，跳出迴圈
+                    }
                 }
                 send_count++;
             }
@@ -356,13 +352,12 @@ namespace MyTest
                 timer_getStatus.Stop();
                 MessageBox.Show("Sabio 4010沒有回應");
             }
-
         }
-              
-        
-        /*********************************************************************
+
+
+        /*********************************************************************************************************************
                                          clock
-        *********************************************************************/
+        **********************************************************************************************************************/
         private void timer_command_Tick(object sender, EventArgs e)
         {
             timer_command.Interval = 1000;
@@ -373,57 +368,42 @@ namespace MyTest
                 int time = int.Parse(item.SubItems[1].Text)*60;
                 Variable.CmdTimeCount = time;
 
-                while (Variable.CmdStatus == -2)
-                {
-                    Thread.Sleep(100); // 每 100ms 檢查一次
-                }
-
-                timer_command.Stop();
+                timer_command.Stop();  
                 //timer_getStatus.Stop();
-                Variable.CmdStatus = -2;
-                serialPort1_DataSend(command, "set point or stop");
-                if (!serialPort1.IsOpen) { return; }//////////////////////////////////////
-                string ask = serialPort1.ReadExisting();//////////////////////////////////
-                Info_Box.AppendText(ask.Replace("\u0006", "[ACK]\n"));////////////////////
-                timer_command.Start();
-                //timer_getStatus.Start();
-
-                if (Variable.CmdStatus == -1)
+                serialPort1_DataSend(command, "set point or stop");               
+                if (Variable.CmdStatus != 1)
                 {
                     return;
                 }
-                Variable.CmdIndex++;
-                
+                else
+                {
+                    timer_command.Start();
+                    //timer_getStatus.Start();
+                    Variable.CmdIndex++;
+                }              
             }
             else if(Variable.CmdTimeCount == 0 && Variable.CmdIndex >= listView1.Items.Count)
             {
                 StopCmdList();
             }
-            else if(Variable.CmdStatus == 1)
+            else
             {
                 Variable.CmdTimeCount--;
                 listView1.Items[Variable.CmdIndex-1].SubItems[1].Text = (Variable.CmdTimeCount/60).ToString() + ":" + (Variable.CmdTimeCount % 60).ToString();
-            }
-            else
-            {
-                return;
             }
         }
 
         private void timer_getStatus_Tick(object sender, EventArgs e)
         {
-            timer_getStatus.Interval = int.Parse(UpdateRate_Box.Text)*1000;            
-            while (Variable.CmdStatus == -2)
-            {
-                Thread.Sleep(100); // 每 100ms 檢查一次
-            }
-            if (serialPort1.IsOpen) { serialPort1.DiscardInBuffer(); }
-            Variable.CmdStatus = -2;            
+            timer_getStatus.Interval = int.Parse(UpdateRate_Box.Text)*1000;
+            Variable.StatusMode = 0;
             serialPort1_DataSend("@GS,001,D", "get status");
-            if (!serialPort1.IsOpen) { return; }///////////////////////////////
-            string dilution = serialPort1.ReadExisting();//////////////////////
-            Info_Box.AppendText(dilution.Replace("\u000D", "[CR]\n"));/////////
-            Variable.RxString = "";
+            if (Variable.CmdStatus != 1)
+            {
+                timer_getStatus.Stop();
+                return;
+            }
+            string dilution = Variable.RxString;
             dilution = dilution.Replace("\r", "");
             string[] dilution_list = dilution.Split(',');
             if(dilution_list.Length != 11)
@@ -434,30 +414,28 @@ namespace MyTest
                     dilution_list[i] = "Miss";
                 }
             }
-            Thread.Sleep(100);
-
-            /////////////////////////////////////////////////////
-            while (Variable.CmdStatus == -2)
+            if (dilution_list[4] == "0.0" || dilution_list[4] == "Miss")
             {
-                Thread.Sleep(100); // 每 100ms 檢查一次
+                Variable.StatusMode = 1;
             }
-            Variable.CmdStatus = -2;
+            else
+            {
+                Variable.StatusMode = 2;
+            }
+            /******************************************************/
             serialPort1_DataSend("@GS,001,G", "get status");
-            string gas = serialPort1.ReadExisting();//////////////////////////////
-            Info_Box.AppendText(gas.Replace("\u000D", "[CR]\n"));/////////////////
-            if (gas.IndexOf('\r') != -1)
+            if (Variable.CmdStatus != 1)
             {
-                gas = gas.Substring(gas.IndexOf('\r') + 1);
+                timer_getStatus.Stop();
+                return;
             }
-            Variable.RxString = "";
+            string gas = Variable.RxString;
             gas = gas.Replace("\r", "");
             string[] gas_list = gas.Split(',');
-            Thread.Sleep(100);
 
-            //////////////////////////////////////////////////////
+            /*******************************************************/
             string strResult = string.Empty;
             gas_list[0] = (float.Parse(gas_list[0])/1000).ToString();
-            //int totalflow = int.Parse(dilution_list[0]) + int.Parse(dilution_list[4]) / 1000;
             if (gas_list.Length == 3)
             {
                 label_Status1.Text = "Nothing";
@@ -482,6 +460,8 @@ namespace MyTest
             label_Measure4.Text = dilution_list[5] != null ? dilution_list[5] : "Miss";
             label_Measure5.Text = dilution_list[4] != null ? (float.Parse(dilution_list[0]) + float.Parse(dilution_list[4]) / 1000).ToString() : "Miss";
 
+            LabelFlash();
+
             strResult += DateTime.Now.ToString() + ',';
             strResult += Variable.CsvTimeCount.ToString() + ',';
             strResult += label_Status2.Text + ',';
@@ -494,16 +474,14 @@ namespace MyTest
             strResult += label_Status1.Text + '\n';
             using (StreamWriter strwrite = new StreamWriter("D:\\" + Variable.FileName + ".csv", true, Encoding.Default))
             {
-                strwrite.Write(strResult);//將上面的值填入表格內
+                strwrite.Write(strResult);
             }
 
             Variable.CsvTimeCount += float.Parse(UpdateRate_Box.Text) / 60;
         }
-
-
-        /*********************************************************************
+        /*********************************************************************************************************************
                                          other
-        *********************************************************************/
+        **********************************************************************************************************************/
         private void display_info() {
             Info_Box.AppendText(Variable.RxInfo);
         }
@@ -529,9 +507,10 @@ namespace MyTest
             Variable.CmdTimeCount = 0;
             
             serialPort1_DataSend("@S,001", "set point or stop");
-            if (!serialPort1.IsOpen) { return; }//////////////////////////////////////
-            string ask = serialPort1.ReadExisting();//////////////////////////////////
-            Info_Box.AppendText(ask.Replace("\u0006", "[ACK]\n"));////////////////////
+            if (Variable.CmdStatus != 1)
+            {
+                return;
+            }
             timer_command.Stop();
             btn_CmdStart.Enabled = true;
             btn_CmdStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -541,23 +520,13 @@ namespace MyTest
             btn_TS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             btn_ClnList.Enabled = true;
             btn_ClnList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            btn_Purge.Enabled = true;
-            btn_Purge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-
+            
         }
 
         private void btn_test_Click(object sender, EventArgs e)
         {
-            Variable.StatusBuf = "";
-            //serialPort1_DataSend(command_box.Text, "get status");
-            serialPort1.WriteLine(command_box.Text+'\r'+'\n');
-            
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+            serialPort1.WriteLine(command_box.Text+'\r'+'\n');            
+        }       
 
         private void comboBox1_DropDown(object sender, EventArgs e)
         {
@@ -567,13 +536,20 @@ namespace MyTest
 
         private void Info_Box_TextChanged(object sender, EventArgs e)
         {
-            this.Info_Box.SelectionStart = this.Info_Box.TextLength;
-            this.Info_Box.ScrollToCaret();
+            Info_Box.SelectionStart = this.Info_Box.TextLength;
+            Info_Box.ScrollToCaret();
         }
 
         private void brn_InfoCln_Click(object sender, EventArgs e)
         {
             Info_Box.Clear();
+        }
+
+        private async void LabelFlash()
+        {
+            Update_LED.ForeColor = Color.IndianRed;
+            await Task.Delay(500);
+            Update_LED.ForeColor = SystemColors.ControlLight;
         }
 
         

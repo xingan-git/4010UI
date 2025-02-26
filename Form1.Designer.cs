@@ -51,7 +51,7 @@ namespace MyTest
             this.UpdateRate_Box = new System.Windows.Forms.ComboBox();
             this.btn_CheckNow = new System.Windows.Forms.Button();
             this.flowLayoutPanel9 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label8 = new System.Windows.Forms.Label();
+            this.Update_LED = new System.Windows.Forms.Label();
             this.flowLayoutPanel13 = new System.Windows.Forms.FlowLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -83,6 +83,7 @@ namespace MyTest
             this.label20 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
+            this.btn_Purge = new System.Windows.Forms.Button();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel10 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
@@ -114,7 +115,8 @@ namespace MyTest
             this.btn_test = new System.Windows.Forms.Button();
             this.timer_command = new System.Windows.Forms.Timer(this.components);
             this.timer_getStatus = new System.Windows.Forms.Timer(this.components);
-            this.btn_Purge = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.btn_PurgeLock = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -306,6 +308,7 @@ namespace MyTest
             this.flowLayoutPanel3.Controls.Add(this.flowLayoutPanel11);
             this.flowLayoutPanel3.Controls.Add(this.flowLayoutPanel9);
             this.flowLayoutPanel3.Controls.Add(this.flowLayoutPanel12);
+            this.flowLayoutPanel3.Controls.Add(this.btn_PurgeLock);
             this.flowLayoutPanel3.Controls.Add(this.btn_Purge);
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
@@ -376,7 +379,8 @@ namespace MyTest
             // 
             // flowLayoutPanel9
             // 
-            this.flowLayoutPanel9.Controls.Add(this.label8);
+            this.flowLayoutPanel9.Controls.Add(this.label13);
+            this.flowLayoutPanel9.Controls.Add(this.Update_LED);
             this.flowLayoutPanel9.Controls.Add(this.flowLayoutPanel13);
             this.flowLayoutPanel9.Controls.Add(this.flowLayoutPanel14);
             this.flowLayoutPanel9.Location = new System.Drawing.Point(0, 57);
@@ -385,18 +389,20 @@ namespace MyTest
             this.flowLayoutPanel9.Size = new System.Drawing.Size(520, 98);
             this.flowLayoutPanel9.TabIndex = 28;
             // 
-            // label8
+            // Update_LED
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(0, 0);
-            this.label8.Margin = new System.Windows.Forms.Padding(0, 0, 400, 0);
-            this.label8.Name = "label8";
-            this.label8.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.label8.Size = new System.Drawing.Size(100, 31);
-            this.label8.TabIndex = 22;
-            this.label8.Text = "Status :";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Update_LED.AutoSize = true;
+            this.Update_LED.BackColor = System.Drawing.Color.Transparent;
+            this.Update_LED.Font = new System.Drawing.Font("Cooper Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Update_LED.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.Update_LED.Location = new System.Drawing.Point(470, 0);
+            this.Update_LED.Margin = new System.Windows.Forms.Padding(0);
+            this.Update_LED.Name = "Update_LED";
+            this.Update_LED.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
+            this.Update_LED.Size = new System.Drawing.Size(33, 30);
+            this.Update_LED.TabIndex = 22;
+            this.Update_LED.Text = "●";
+            this.Update_LED.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // flowLayoutPanel13
             // 
@@ -834,6 +840,21 @@ namespace MyTest
             this.label29.Text = "SLPM";
             this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // btn_Purge
+            // 
+            this.btn_Purge.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_Purge.Enabled = false;
+            this.btn_Purge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Purge.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btn_Purge.Location = new System.Drawing.Point(372, 363);
+            this.btn_Purge.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
+            this.btn_Purge.Name = "btn_Purge";
+            this.btn_Purge.Size = new System.Drawing.Size(113, 32);
+            this.btn_Purge.TabIndex = 25;
+            this.btn_Purge.Text = "Purge";
+            this.btn_Purge.UseVisualStyleBackColor = false;
+            this.btn_Purge.Click += new System.EventHandler(this.btn_Purge_Click);
+            // 
             // flowLayoutPanel5
             // 
             this.flowLayoutPanel5.Controls.Add(this.flowLayoutPanel10);
@@ -947,7 +968,6 @@ namespace MyTest
             this.Point_Box.Font = new System.Drawing.Font("Consolas", 15F);
             this.Point_Box.FormattingEnabled = true;
             this.Point_Box.Items.AddRange(new object[] {
-            "0",
             "1",
             "2",
             "3",
@@ -957,7 +977,17 @@ namespace MyTest
             "7",
             "8",
             "9",
-            "10"});
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20"});
             this.Point_Box.Location = new System.Drawing.Point(101, 62);
             this.Point_Box.Margin = new System.Windows.Forms.Padding(0);
             this.Point_Box.Name = "Point_Box";
@@ -1215,19 +1245,34 @@ namespace MyTest
             // 
             this.timer_getStatus.Tick += new System.EventHandler(this.timer_getStatus_Tick);
             // 
-            // btn_Purge
+            // label13
             // 
-            this.btn_Purge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_Purge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Purge.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btn_Purge.Location = new System.Drawing.Point(407, 363);
-            this.btn_Purge.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.btn_Purge.Name = "btn_Purge";
-            this.btn_Purge.Size = new System.Drawing.Size(113, 32);
-            this.btn_Purge.TabIndex = 25;
-            this.btn_Purge.Text = "Purge";
-            this.btn_Purge.UseVisualStyleBackColor = false;
-            this.btn_Purge.Click += new System.EventHandler(this.btn_Purge_Click);
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(0, 0);
+            this.label13.Margin = new System.Windows.Forms.Padding(0, 0, 370, 0);
+            this.label13.Name = "label13";
+            this.label13.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
+            this.label13.Size = new System.Drawing.Size(100, 31);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "Status :";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btn_PurgeLock
+            // 
+            this.btn_PurgeLock.BackColor = System.Drawing.Color.LightGray;
+            this.btn_PurgeLock.BackgroundImage = global::MyTest.Properties.Resources._lock;
+            this.btn_PurgeLock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_PurgeLock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_PurgeLock.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btn_PurgeLock.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_PurgeLock.Location = new System.Drawing.Point(485, 363);
+            this.btn_PurgeLock.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
+            this.btn_PurgeLock.Name = "btn_PurgeLock";
+            this.btn_PurgeLock.Size = new System.Drawing.Size(35, 32);
+            this.btn_PurgeLock.TabIndex = 30;
+            this.btn_PurgeLock.UseVisualStyleBackColor = false;
+            this.btn_PurgeLock.Click += new System.EventHandler(this.btn_PurgeLock_Click);
             // 
             // Form1
             // 
@@ -1318,7 +1363,7 @@ namespace MyTest
         private Label label9;
         private Button btn_CheckNow;
         private FlowLayoutPanel flowLayoutPanel9;
-        private Label label8;
+        private Label Update_LED;
         private FlowLayoutPanel flowLayoutPanel13;
         private Label label10;
         private Label label11;
@@ -1371,6 +1416,8 @@ namespace MyTest
         private TextBox command_box;
         private ComboBox UpdateRate_Box;
         private Button btn_Purge;
+        private Label label13;
+        private Button btn_PurgeLock;
     }
 }
 

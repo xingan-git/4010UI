@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "D:\\Intern\\mytest\\WindowsFromsApp_test\\MyTest\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BE5884F6-106A-4BA9-A7F6-183BC210CEE1}|MyTest.csproj|D:\\Intern\\mytest\\WindowsFromsApp_test\\MyTest\\variable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE5884F6-106A-4BA9-A7F6-183BC210CEE1}|MyTest.csproj|solutionrelative:variable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BE5884F6-106A-4BA9-A7F6-183BC210CEE1}|MyTest.csproj|d:\\intern\\mytest\\windowsfromsapp_test\\mytest\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BE5884F6-106A-4BA9-A7F6-183BC210CEE1}|MyTest.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BE5884F6-106A-4BA9-A7F6-183BC210CEE1}|MyTest.csproj|D:\\Intern\\mytest\\WindowsFromsApp_test\\MyTest\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{BE5884F6-106A-4BA9-A7F6-183BC210CEE1}|MyTest.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BE5884F6-106A-4BA9-A7F6-183BC210CEE1}|MyTest.csproj|D:\\Intern\\mytest\\WindowsFromsApp_test\\MyTest\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BE5884F6-106A-4BA9-A7F6-183BC210CEE1}|MyTest.csproj|d:\\intern\\mytest\\windowsfromsapp_test\\mytest\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BE5884F6-106A-4BA9-A7F6-183BC210CEE1}|MyTest.csproj|solutionrelative:form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BE5884F6-106A-4BA9-A7F6-183BC210CEE1}|MyTest.csproj|D:\\Intern\\mytest\\WindowsFromsApp_test\\MyTest\\variable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BE5884F6-106A-4BA9-A7F6-183BC210CEE1}|MyTest.csproj|solutionrelative:variable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BE5884F6-106A-4BA9-A7F6-183BC210CEE1}|MyTest.csproj|d:\\intern\\mytest\\windowsfromsapp_test\\mytest\\properties\\resources.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "RelativeMoniker": "D:0:0:{BE5884F6-106A-4BA9-A7F6-183BC210CEE1}|MyTest.csproj|solutionrelative:properties\\resources.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE5884F6-106A-4BA9-A7F6-183BC210CEE1}|MyTest.csproj|D:\\Intern\\mytest\\WindowsFromsApp_test\\MyTest\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BE5884F6-106A-4BA9-A7F6-183BC210CEE1}|MyTest.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,14 +35,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Variable.cs",
-              "DocumentMoniker": "D:\\Intern\\mytest\\WindowsFromsApp_test\\MyTest\\Variable.cs",
-              "RelativeDocumentMoniker": "Variable.cs",
-              "ToolTip": "D:\\Intern\\mytest\\WindowsFromsApp_test\\MyTest\\Variable.cs",
-              "RelativeToolTip": "Variable.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-08T02:35:16.134Z"
+              "Title": "Resources.resx",
+              "DocumentMoniker": "D:\\Intern\\mytest\\WindowsFromsApp_test\\MyTest\\Properties\\Resources.resx",
+              "RelativeDocumentMoniker": "Properties\\Resources.resx",
+              "ToolTip": "D:\\Intern\\mytest\\WindowsFromsApp_test\\MyTest\\Properties\\Resources.resx",
+              "RelativeToolTip": "Properties\\Resources.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-02-26T01:55:10.084Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -48,27 +52,40 @@
               "RelativeDocumentMoniker": "Form1.Designer.cs",
               "ToolTip": "D:\\Intern\\mytest\\WindowsFromsApp_test\\MyTest\\Form1.Designer.cs",
               "RelativeToolTip": "Form1.Designer.cs",
-              "ViewState": "AQIAAIsAAAAAAAAAAAAqwJYAAAApAAAA",
+              "ViewState": "AQIAAHIFAAAAAAAAAAAkwI8FAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-08T02:49:50.151Z",
+              "WhenOpened": "2025-02-26T01:12:05.699Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Variable.cs",
+              "DocumentMoniker": "D:\\Intern\\mytest\\WindowsFromsApp_test\\MyTest\\Variable.cs",
+              "RelativeDocumentMoniker": "Variable.cs",
+              "ToolTip": "D:\\Intern\\mytest\\WindowsFromsApp_test\\MyTest\\Variable.cs",
+              "RelativeToolTip": "Variable.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-08T02:35:16.134Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Form1.cs",
               "DocumentMoniker": "D:\\Intern\\mytest\\WindowsFromsApp_test\\MyTest\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "D:\\Intern\\mytest\\WindowsFromsApp_test\\MyTest\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AQIAAK4AAAAAAAAAAADwv64AAAAdAAAA",
+              "ViewState": "AQIAABMCAAAAAAAAAAAcwC0CAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-05T02:49:52.065Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Form1.cs [\u8A2D\u8A08]",
               "DocumentMoniker": "D:\\Intern\\mytest\\WindowsFromsApp_test\\MyTest\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
