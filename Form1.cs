@@ -101,14 +101,16 @@ namespace MyTest
         }
         private void btn_MS_Click(object sender, EventArgs e)
         {
-            ListViewItem item = new ListViewItem(new string[] { "@MS," + Addr_Box.Text + "," + Sequence_Box.Text + "," + Point_Box.Text, Time_Box.Text + ":" + "00" });
+            ListViewItem item = new ListViewItem(new string[] { "@MS," + Addr_Box.Text 
+                + "," + Sequence_Box.Text + "," + Point_Box.Text, Time_Box.Text + ":" + "00" });
             listView1.Items.Add(item);
         }
 
 
         private void btn_TS_Click(object sender, EventArgs e)
         {
-            ListViewItem item = new ListViewItem(new string[] { "@TS," + Addr_Box.Text + "," + Sequence_Box.Text + "," + Point_Box.Text, Time_Box.Text });
+            ListViewItem item = new ListViewItem(new string[] { "@TS," + Addr_Box.Text 
+                + "," + Sequence_Box.Text + "," + Point_Box.Text, Time_Box.Text });
             listView1.Items.Add(item);
         }
 
@@ -145,8 +147,10 @@ namespace MyTest
                     UpdateRate_Box.Enabled = false;
                     Variable.CsvTimeCount = 0;
                     Variable.FileName = FileName_Box.Text;
-                    string strResult = "Computer Time,Time,Source,Diluted Gases,Diluent MFC (Control),Diluent MFC (Monitor),Source MFC (Control),Source MFC (Monitor)," +
-                        "Total Flow(Control),Total Flow(Monitor),1st Gases,1st Diluted Gases,2st Gases,2st Diluted Gases,3st Gases,3st Diluted Gases\n";
+                    string strResult = "Computer Time,Time,Source,Diluted Gases,Diluent MFC (Control),Diluent MFC (Monitor)," +
+                        "Source MFC (Control),Source MFC (Monitor)," +
+                        "Total Flow(Control),Total Flow(Monitor),1st Gases,1st Diluted Gases," +
+                        "2st Gases,2st Diluted Gases,3st Gases,3st Diluted Gases\n";
                     using (StreamWriter strwrite = new StreamWriter("D:\\" + Variable.FileName + ".csv", false, Encoding.Default))
                     {
                         strwrite.Write(strResult);
@@ -355,7 +359,8 @@ namespace MyTest
             else
             {
                 Variable.CmdTimeCount--;
-                listView1.Items[Variable.CmdIndex - 1].SubItems[1].Text = (Variable.CmdTimeCount / 60).ToString() + ":" + (Variable.CmdTimeCount % 60).ToString();
+                listView1.Items[Variable.CmdIndex - 1].SubItems[1].Text = (Variable.CmdTimeCount / 60).ToString() + ":" +
+                    (Variable.CmdTimeCount % 60).ToString();
             }
         }
 

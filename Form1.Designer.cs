@@ -160,10 +160,10 @@ namespace MyTest
             this.btn_Connect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Connect.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Connect.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_Connect.Location = new System.Drawing.Point(452, 0);
-            this.btn_Connect.Margin = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btn_Connect.Location = new System.Drawing.Point(602, 0);
+            this.btn_Connect.Margin = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btn_Connect.Name = "btn_Connect";
-            this.btn_Connect.Size = new System.Drawing.Size(132, 31);
+            this.btn_Connect.Size = new System.Drawing.Size(176, 39);
             this.btn_Connect.TabIndex = 2;
             this.btn_Connect.Text = "Connect";
             this.btn_Connect.UseVisualStyleBackColor = false;
@@ -173,11 +173,11 @@ namespace MyTest
             // 
             this.label_State.AutoSize = true;
             this.label_State.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label_State.Location = new System.Drawing.Point(614, 10);
-            this.label_State.Margin = new System.Windows.Forms.Padding(10);
+            this.label_State.Location = new System.Drawing.Point(818, 12);
+            this.label_State.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.label_State.Name = "label_State";
-            this.label_State.Padding = new System.Windows.Forms.Padding(2, 6, 25, 6);
-            this.label_State.Size = new System.Drawing.Size(267, 31);
+            this.label_State.Padding = new System.Windows.Forms.Padding(3, 8, 33, 8);
+            this.label_State.Size = new System.Drawing.Size(347, 40);
             this.label_State.TabIndex = 1;
             this.label_State.Text = "Choose port to connect.";
             // 
@@ -190,10 +190,10 @@ namespace MyTest
             "4800",
             "9600",
             "14400"});
-            this.comboBox2.Location = new System.Drawing.Point(101, 0);
+            this.comboBox2.Location = new System.Drawing.Point(132, 0);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(0);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(103, 31);
+            this.comboBox2.Size = new System.Drawing.Size(136, 37);
             this.comboBox2.TabIndex = 0;
             // 
             // btn_CmdStart
@@ -201,10 +201,10 @@ namespace MyTest
             this.btn_CmdStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_CmdStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_CmdStart.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btn_CmdStart.Location = new System.Drawing.Point(0, 279);
+            this.btn_CmdStart.Location = new System.Drawing.Point(0, 348);
             this.btn_CmdStart.Margin = new System.Windows.Forms.Padding(0);
             this.btn_CmdStart.Name = "btn_CmdStart";
-            this.btn_CmdStart.Size = new System.Drawing.Size(180, 32);
+            this.btn_CmdStart.Size = new System.Drawing.Size(240, 40);
             this.btn_CmdStart.TabIndex = 0;
             this.btn_CmdStart.Text = "Start";
             this.btn_CmdStart.UseVisualStyleBackColor = false;
@@ -213,10 +213,10 @@ namespace MyTest
             // Info_Box
             // 
             this.Info_Box.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Info_Box.Location = new System.Drawing.Point(0, 394);
-            this.Info_Box.Margin = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.Info_Box.Location = new System.Drawing.Point(0, 493);
+            this.Info_Box.Margin = new System.Windows.Forms.Padding(0, 0, 0, 4);
             this.Info_Box.Name = "Info_Box";
-            this.Info_Box.Size = new System.Drawing.Size(202, 91);
+            this.Info_Box.Size = new System.Drawing.Size(268, 113);
             this.Info_Box.TabIndex = 8;
             this.Info_Box.TabStop = false;
             this.Info_Box.Text = "";
@@ -227,10 +227,10 @@ namespace MyTest
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("Consolas", 15F);
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(101, 0);
+            this.comboBox1.Location = new System.Drawing.Point(132, 0);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(0);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(102, 31);
+            this.comboBox1.Size = new System.Drawing.Size(135, 37);
             this.comboBox1.TabIndex = 0;
             this.comboBox1.DropDown += new System.EventHandler(this.comboBox1_DropDown);
             // 
@@ -242,8 +242,8 @@ namespace MyTest
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(26, 4, 25, 5);
-            this.label1.Size = new System.Drawing.Size(101, 31);
+            this.label1.Padding = new System.Windows.Forms.Padding(35, 5, 33, 6);
+            this.label1.Size = new System.Drawing.Size(132, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "Port";
             // 
@@ -255,8 +255,8 @@ namespace MyTest
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(26, 4, 25, 5);
-            this.label2.Size = new System.Drawing.Size(101, 31);
+            this.label2.Padding = new System.Windows.Forms.Padding(35, 5, 33, 6);
+            this.label2.Size = new System.Drawing.Size(132, 39);
             this.label2.TabIndex = 10;
             this.label2.Text = "Baud";
             // 
@@ -270,11 +270,12 @@ namespace MyTest
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel5, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label_State, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1300, 600);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1733, 750);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -283,10 +284,10 @@ namespace MyTest
             this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel4);
             this.flowLayoutPanel1.Controls.Add(this.btn_Connect);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(10, 10);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(10);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(13, 12);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(584, 31);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(779, 40);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // flowLayoutPanel2
@@ -294,19 +295,19 @@ namespace MyTest
             this.flowLayoutPanel2.Controls.Add(this.label1);
             this.flowLayoutPanel2.Controls.Add(this.comboBox1);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0, 0, 13, 0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(203, 31);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(271, 39);
             this.flowLayoutPanel2.TabIndex = 0;
             // 
             // flowLayoutPanel4
             // 
             this.flowLayoutPanel4.Controls.Add(this.label2);
             this.flowLayoutPanel4.Controls.Add(this.comboBox2);
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(223, 0);
-            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(297, 0);
+            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(13, 0, 13, 0);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(204, 31);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(272, 39);
             this.flowLayoutPanel4.TabIndex = 1;
             // 
             // flowLayoutPanel3
@@ -317,10 +318,10 @@ namespace MyTest
             this.flowLayoutPanel3.Controls.Add(this.btn_Purge);
             this.flowLayoutPanel3.Controls.Add(this.btn_PurgeLock);
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(614, 51);
-            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(10, 0, 10, 10);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(818, 64);
+            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(13, 0, 13, 12);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(676, 539);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(902, 674);
             this.flowLayoutPanel3.TabIndex = 3;
             // 
             // flowLayoutPanel9
@@ -330,10 +331,10 @@ namespace MyTest
             this.flowLayoutPanel9.Controls.Add(this.tableLayoutPanel7);
             this.flowLayoutPanel9.Controls.Add(this.flowLayoutPanel13);
             this.flowLayoutPanel9.Controls.Add(this.flowLayoutPanel14);
-            this.flowLayoutPanel9.Location = new System.Drawing.Point(0, 15);
-            this.flowLayoutPanel9.Margin = new System.Windows.Forms.Padding(0, 15, 0, 0);
+            this.flowLayoutPanel9.Location = new System.Drawing.Point(0, 19);
+            this.flowLayoutPanel9.Margin = new System.Windows.Forms.Padding(0, 19, 0, 0);
             this.flowLayoutPanel9.Name = "flowLayoutPanel9";
-            this.flowLayoutPanel9.Size = new System.Drawing.Size(676, 129);
+            this.flowLayoutPanel9.Size = new System.Drawing.Size(901, 161);
             this.flowLayoutPanel9.TabIndex = 28;
             // 
             // label13
@@ -341,10 +342,10 @@ namespace MyTest
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(0, 0);
-            this.label13.Margin = new System.Windows.Forms.Padding(0, 0, 540, 0);
+            this.label13.Margin = new System.Windows.Forms.Padding(0, 0, 720, 0);
             this.label13.Name = "label13";
-            this.label13.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.label13.Size = new System.Drawing.Size(100, 31);
+            this.label13.Padding = new System.Windows.Forms.Padding(7, 5, 7, 6);
+            this.label13.Size = new System.Drawing.Size(130, 39);
             this.label13.TabIndex = 27;
             this.label13.Text = "Status :";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -355,11 +356,11 @@ namespace MyTest
             this.Update_LED.BackColor = System.Drawing.Color.Transparent;
             this.Update_LED.Font = new System.Drawing.Font("Cooper Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Update_LED.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.Update_LED.Location = new System.Drawing.Point(640, 0);
+            this.Update_LED.Location = new System.Drawing.Point(850, 0);
             this.Update_LED.Margin = new System.Windows.Forms.Padding(0);
             this.Update_LED.Name = "Update_LED";
-            this.Update_LED.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.Update_LED.Size = new System.Drawing.Size(33, 30);
+            this.Update_LED.Padding = new System.Windows.Forms.Padding(7, 5, 7, 6);
+            this.Update_LED.Size = new System.Drawing.Size(42, 38);
             this.Update_LED.TabIndex = 22;
             this.Update_LED.Text = "●";
             this.Update_LED.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -368,22 +369,22 @@ namespace MyTest
             // 
             this.tableLayoutPanel7.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.tableLayoutPanel7.ColumnCount = 6;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 213F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
             this.tableLayoutPanel7.Controls.Add(this.label8, 1, 0);
             this.tableLayoutPanel7.Controls.Add(this.label18, 2, 0);
             this.tableLayoutPanel7.Controls.Add(this.label19, 3, 0);
             this.tableLayoutPanel7.Controls.Add(this.label24, 4, 0);
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 31);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 39);
             this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(676, 31);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(901, 39);
             this.tableLayoutPanel7.TabIndex = 28;
             // 
             // label8
@@ -391,11 +392,11 @@ namespace MyTest
             this.label8.AutoSize = true;
             this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label8.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(160, 0);
+            this.label8.Location = new System.Drawing.Point(213, 0);
             this.label8.Margin = new System.Windows.Forms.Padding(0);
             this.label8.Name = "label8";
-            this.label8.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.label8.Size = new System.Drawing.Size(80, 31);
+            this.label8.Padding = new System.Windows.Forms.Padding(7, 5, 7, 6);
+            this.label8.Size = new System.Drawing.Size(104, 39);
             this.label8.TabIndex = 26;
             this.label8.Text = "Source";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -405,11 +406,11 @@ namespace MyTest
             this.label18.AutoSize = true;
             this.label18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label18.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(273, 0);
+            this.label18.Location = new System.Drawing.Point(363, 0);
             this.label18.Margin = new System.Windows.Forms.Padding(0);
             this.label18.Name = "label18";
-            this.label18.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.label18.Size = new System.Drawing.Size(50, 31);
+            this.label18.Padding = new System.Windows.Forms.Padding(7, 5, 7, 6);
+            this.label18.Size = new System.Drawing.Size(65, 39);
             this.label18.TabIndex = 25;
             this.label18.Text = "1st";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -419,11 +420,11 @@ namespace MyTest
             this.label19.AutoSize = true;
             this.label19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label19.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(386, 0);
+            this.label19.Location = new System.Drawing.Point(513, 0);
             this.label19.Margin = new System.Windows.Forms.Padding(0);
             this.label19.Name = "label19";
-            this.label19.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.label19.Size = new System.Drawing.Size(50, 31);
+            this.label19.Padding = new System.Windows.Forms.Padding(7, 5, 7, 6);
+            this.label19.Size = new System.Drawing.Size(65, 39);
             this.label19.TabIndex = 27;
             this.label19.Text = "2nd";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -433,11 +434,11 @@ namespace MyTest
             this.label24.AutoSize = true;
             this.label24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label24.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(499, 0);
+            this.label24.Location = new System.Drawing.Point(663, 0);
             this.label24.Margin = new System.Windows.Forms.Padding(0);
             this.label24.Name = "label24";
-            this.label24.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.label24.Size = new System.Drawing.Size(50, 31);
+            this.label24.Padding = new System.Windows.Forms.Padding(7, 5, 7, 6);
+            this.label24.Size = new System.Drawing.Size(65, 39);
             this.label24.TabIndex = 28;
             this.label24.Text = "3rd";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -447,10 +448,10 @@ namespace MyTest
             this.flowLayoutPanel13.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.flowLayoutPanel13.Controls.Add(this.label10);
             this.flowLayoutPanel13.Controls.Add(this.label11);
-            this.flowLayoutPanel13.Location = new System.Drawing.Point(0, 62);
+            this.flowLayoutPanel13.Location = new System.Drawing.Point(0, 78);
             this.flowLayoutPanel13.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel13.Name = "flowLayoutPanel13";
-            this.flowLayoutPanel13.Size = new System.Drawing.Size(160, 67);
+            this.flowLayoutPanel13.Size = new System.Drawing.Size(213, 84);
             this.flowLayoutPanel13.TabIndex = 26;
             // 
             // label10
@@ -462,8 +463,8 @@ namespace MyTest
             this.label10.Location = new System.Drawing.Point(0, 0);
             this.label10.Margin = new System.Windows.Forms.Padding(0);
             this.label10.Name = "label10";
-            this.label10.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.label10.Size = new System.Drawing.Size(70, 31);
+            this.label10.Padding = new System.Windows.Forms.Padding(7, 5, 7, 6);
+            this.label10.Size = new System.Drawing.Size(91, 39);
             this.label10.TabIndex = 23;
             this.label10.Text = "Gases";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -474,11 +475,11 @@ namespace MyTest
             this.label11.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label11.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(0, 31);
+            this.label11.Location = new System.Drawing.Point(0, 39);
             this.label11.Margin = new System.Windows.Forms.Padding(0);
             this.label11.Name = "label11";
-            this.label11.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.label11.Size = new System.Drawing.Size(150, 31);
+            this.label11.Padding = new System.Windows.Forms.Padding(7, 5, 7, 6);
+            this.label11.Size = new System.Drawing.Size(195, 39);
             this.label11.TabIndex = 25;
             this.label11.Text = "Diluted Gases";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -487,10 +488,10 @@ namespace MyTest
             // 
             this.flowLayoutPanel14.Controls.Add(this.tableLayoutPanel2);
             this.flowLayoutPanel14.Controls.Add(this.tableLayoutPanel3);
-            this.flowLayoutPanel14.Location = new System.Drawing.Point(160, 62);
+            this.flowLayoutPanel14.Location = new System.Drawing.Point(213, 78);
             this.flowLayoutPanel14.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel14.Name = "flowLayoutPanel14";
-            this.flowLayoutPanel14.Size = new System.Drawing.Size(516, 67);
+            this.flowLayoutPanel14.Size = new System.Drawing.Size(688, 84);
             this.flowLayoutPanel14.TabIndex = 26;
             // 
             // tableLayoutPanel2
@@ -515,7 +516,7 @@ namespace MyTest
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(452, 67);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(603, 84);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // label_Status8
@@ -523,11 +524,11 @@ namespace MyTest
             this.label_Status8.AutoSize = true;
             this.label_Status8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label_Status8.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Status8.Location = new System.Drawing.Point(339, 33);
+            this.label_Status8.Location = new System.Drawing.Point(450, 42);
             this.label_Status8.Margin = new System.Windows.Forms.Padding(0);
             this.label_Status8.Name = "label_Status8";
-            this.label_Status8.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.label_Status8.Size = new System.Drawing.Size(40, 31);
+            this.label_Status8.Padding = new System.Windows.Forms.Padding(7, 5, 7, 6);
+            this.label_Status8.Size = new System.Drawing.Size(52, 39);
             this.label_Status8.TabIndex = 31;
             this.label_Status8.Text = "--";
             this.label_Status8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -537,11 +538,11 @@ namespace MyTest
             this.label_Status6.AutoSize = true;
             this.label_Status6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label_Status6.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Status6.Location = new System.Drawing.Point(226, 33);
+            this.label_Status6.Location = new System.Drawing.Point(300, 42);
             this.label_Status6.Margin = new System.Windows.Forms.Padding(0);
             this.label_Status6.Name = "label_Status6";
-            this.label_Status6.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.label_Status6.Size = new System.Drawing.Size(40, 31);
+            this.label_Status6.Padding = new System.Windows.Forms.Padding(7, 5, 7, 6);
+            this.label_Status6.Size = new System.Drawing.Size(52, 39);
             this.label_Status6.TabIndex = 30;
             this.label_Status6.Text = "--";
             this.label_Status6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -551,11 +552,11 @@ namespace MyTest
             this.label_Status4.AutoSize = true;
             this.label_Status4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label_Status4.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Status4.Location = new System.Drawing.Point(113, 33);
+            this.label_Status4.Location = new System.Drawing.Point(150, 42);
             this.label_Status4.Margin = new System.Windows.Forms.Padding(0);
             this.label_Status4.Name = "label_Status4";
-            this.label_Status4.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.label_Status4.Size = new System.Drawing.Size(40, 31);
+            this.label_Status4.Padding = new System.Windows.Forms.Padding(7, 5, 7, 6);
+            this.label_Status4.Size = new System.Drawing.Size(52, 39);
             this.label_Status4.TabIndex = 29;
             this.label_Status4.Text = "--";
             this.label_Status4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -565,11 +566,11 @@ namespace MyTest
             this.label_Status7.AutoSize = true;
             this.label_Status7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label_Status7.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Status7.Location = new System.Drawing.Point(339, 0);
+            this.label_Status7.Location = new System.Drawing.Point(450, 0);
             this.label_Status7.Margin = new System.Windows.Forms.Padding(0);
             this.label_Status7.Name = "label_Status7";
-            this.label_Status7.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.label_Status7.Size = new System.Drawing.Size(40, 31);
+            this.label_Status7.Padding = new System.Windows.Forms.Padding(7, 5, 7, 6);
+            this.label_Status7.Size = new System.Drawing.Size(52, 39);
             this.label_Status7.TabIndex = 28;
             this.label_Status7.Text = "--";
             this.label_Status7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -579,11 +580,11 @@ namespace MyTest
             this.label_Status5.AutoSize = true;
             this.label_Status5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label_Status5.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Status5.Location = new System.Drawing.Point(226, 0);
+            this.label_Status5.Location = new System.Drawing.Point(300, 0);
             this.label_Status5.Margin = new System.Windows.Forms.Padding(0);
             this.label_Status5.Name = "label_Status5";
-            this.label_Status5.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.label_Status5.Size = new System.Drawing.Size(40, 31);
+            this.label_Status5.Padding = new System.Windows.Forms.Padding(7, 5, 7, 6);
+            this.label_Status5.Size = new System.Drawing.Size(52, 39);
             this.label_Status5.TabIndex = 27;
             this.label_Status5.Text = "--";
             this.label_Status5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -593,11 +594,11 @@ namespace MyTest
             this.label_Status3.AutoSize = true;
             this.label_Status3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label_Status3.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Status3.Location = new System.Drawing.Point(113, 0);
+            this.label_Status3.Location = new System.Drawing.Point(150, 0);
             this.label_Status3.Margin = new System.Windows.Forms.Padding(0);
             this.label_Status3.Name = "label_Status3";
-            this.label_Status3.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.label_Status3.Size = new System.Drawing.Size(40, 31);
+            this.label_Status3.Padding = new System.Windows.Forms.Padding(7, 5, 7, 6);
+            this.label_Status3.Size = new System.Drawing.Size(52, 39);
             this.label_Status3.TabIndex = 26;
             this.label_Status3.Text = "--";
             this.label_Status3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -610,8 +611,8 @@ namespace MyTest
             this.label_Status1.Location = new System.Drawing.Point(0, 0);
             this.label_Status1.Margin = new System.Windows.Forms.Padding(0);
             this.label_Status1.Name = "label_Status1";
-            this.label_Status1.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.label_Status1.Size = new System.Drawing.Size(40, 31);
+            this.label_Status1.Padding = new System.Windows.Forms.Padding(7, 5, 7, 6);
+            this.label_Status1.Size = new System.Drawing.Size(52, 39);
             this.label_Status1.TabIndex = 24;
             this.label_Status1.Text = "--";
             this.label_Status1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -621,11 +622,11 @@ namespace MyTest
             this.label_Status2.AutoSize = true;
             this.label_Status2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label_Status2.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Status2.Location = new System.Drawing.Point(0, 33);
+            this.label_Status2.Location = new System.Drawing.Point(0, 42);
             this.label_Status2.Margin = new System.Windows.Forms.Padding(0);
             this.label_Status2.Name = "label_Status2";
-            this.label_Status2.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.label_Status2.Size = new System.Drawing.Size(40, 31);
+            this.label_Status2.Padding = new System.Windows.Forms.Padding(7, 5, 7, 6);
+            this.label_Status2.Size = new System.Drawing.Size(52, 39);
             this.label_Status2.TabIndex = 25;
             this.label_Status2.Text = "--";
             this.label_Status2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -636,13 +637,13 @@ namespace MyTest
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.label14, 0, 1);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(452, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(603, 0);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(64, 67);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(85, 84);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // label14
@@ -650,11 +651,11 @@ namespace MyTest
             this.label14.AutoSize = true;
             this.label14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label14.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(0, 33);
+            this.label14.Location = new System.Drawing.Point(0, 42);
             this.label14.Margin = new System.Windows.Forms.Padding(0);
             this.label14.Name = "label14";
-            this.label14.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.label14.Size = new System.Drawing.Size(50, 31);
+            this.label14.Padding = new System.Windows.Forms.Padding(7, 5, 7, 6);
+            this.label14.Size = new System.Drawing.Size(65, 39);
             this.label14.TabIndex = 25;
             this.label14.Text = "PPB";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -665,10 +666,10 @@ namespace MyTest
             this.flowLayoutPanel12.Controls.Add(this.flowLayoutPanel7);
             this.flowLayoutPanel12.Controls.Add(this.flowLayoutPanel16);
             this.flowLayoutPanel12.Controls.Add(this.flowLayoutPanel17);
-            this.flowLayoutPanel12.Location = new System.Drawing.Point(0, 144);
-            this.flowLayoutPanel12.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.flowLayoutPanel12.Location = new System.Drawing.Point(0, 180);
+            this.flowLayoutPanel12.Margin = new System.Windows.Forms.Padding(0, 0, 0, 12);
             this.flowLayoutPanel12.Name = "flowLayoutPanel12";
-            this.flowLayoutPanel12.Size = new System.Drawing.Size(676, 155);
+            this.flowLayoutPanel12.Size = new System.Drawing.Size(901, 194);
             this.flowLayoutPanel12.TabIndex = 29;
             // 
             // label21
@@ -676,10 +677,10 @@ namespace MyTest
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.Location = new System.Drawing.Point(0, 0);
-            this.label21.Margin = new System.Windows.Forms.Padding(0, 0, 400, 0);
+            this.label21.Margin = new System.Windows.Forms.Padding(0, 0, 533, 0);
             this.label21.Name = "label21";
-            this.label21.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.label21.Size = new System.Drawing.Size(110, 31);
+            this.label21.Padding = new System.Windows.Forms.Padding(7, 5, 7, 6);
+            this.label21.Size = new System.Drawing.Size(143, 39);
             this.label21.TabIndex = 27;
             this.label21.Text = "Measure :";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -687,20 +688,20 @@ namespace MyTest
             // flowLayoutPanel7
             // 
             this.flowLayoutPanel7.Controls.Add(this.tableLayoutPanel6);
-            this.flowLayoutPanel7.Location = new System.Drawing.Point(0, 31);
+            this.flowLayoutPanel7.Location = new System.Drawing.Point(0, 39);
             this.flowLayoutPanel7.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel7.Name = "flowLayoutPanel7";
-            this.flowLayoutPanel7.Size = new System.Drawing.Size(676, 31);
+            this.flowLayoutPanel7.Size = new System.Drawing.Size(901, 39);
             this.flowLayoutPanel7.TabIndex = 28;
             // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.tableLayoutPanel6.ColumnCount = 4;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 213F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 88F));
             this.tableLayoutPanel6.Controls.Add(this.label22, 1, 0);
             this.tableLayoutPanel6.Controls.Add(this.label15, 2, 0);
             this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 0);
@@ -708,7 +709,7 @@ namespace MyTest
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(676, 31);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(901, 39);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
             // label22
@@ -716,11 +717,11 @@ namespace MyTest
             this.label22.AutoSize = true;
             this.label22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label22.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(160, 0);
+            this.label22.Location = new System.Drawing.Point(213, 0);
             this.label22.Margin = new System.Windows.Forms.Padding(0);
             this.label22.Name = "label22";
-            this.label22.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.label22.Size = new System.Drawing.Size(90, 31);
+            this.label22.Padding = new System.Windows.Forms.Padding(7, 5, 7, 6);
+            this.label22.Size = new System.Drawing.Size(117, 39);
             this.label22.TabIndex = 26;
             this.label22.Text = "Control";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -730,11 +731,11 @@ namespace MyTest
             this.label15.AutoSize = true;
             this.label15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label15.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(385, 0);
+            this.label15.Location = new System.Drawing.Point(513, 0);
             this.label15.Margin = new System.Windows.Forms.Padding(0);
             this.label15.Name = "label15";
-            this.label15.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.label15.Size = new System.Drawing.Size(90, 31);
+            this.label15.Padding = new System.Windows.Forms.Padding(7, 5, 7, 6);
+            this.label15.Size = new System.Drawing.Size(117, 39);
             this.label15.TabIndex = 25;
             this.label15.Text = "Monitor";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -745,10 +746,10 @@ namespace MyTest
             this.flowLayoutPanel16.Controls.Add(this.label17);
             this.flowLayoutPanel16.Controls.Add(this.label16);
             this.flowLayoutPanel16.Controls.Add(this.label23);
-            this.flowLayoutPanel16.Location = new System.Drawing.Point(0, 62);
+            this.flowLayoutPanel16.Location = new System.Drawing.Point(0, 78);
             this.flowLayoutPanel16.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel16.Name = "flowLayoutPanel16";
-            this.flowLayoutPanel16.Size = new System.Drawing.Size(160, 93);
+            this.flowLayoutPanel16.Size = new System.Drawing.Size(213, 116);
             this.flowLayoutPanel16.TabIndex = 26;
             // 
             // label17
@@ -759,8 +760,8 @@ namespace MyTest
             this.label17.Location = new System.Drawing.Point(0, 0);
             this.label17.Margin = new System.Windows.Forms.Padding(0);
             this.label17.Name = "label17";
-            this.label17.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.label17.Size = new System.Drawing.Size(130, 31);
+            this.label17.Padding = new System.Windows.Forms.Padding(7, 5, 7, 6);
+            this.label17.Size = new System.Drawing.Size(169, 39);
             this.label17.TabIndex = 25;
             this.label17.Text = "Diluted MFC";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -771,11 +772,11 @@ namespace MyTest
             this.label16.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.label16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label16.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(0, 31);
+            this.label16.Location = new System.Drawing.Point(0, 39);
             this.label16.Margin = new System.Windows.Forms.Padding(0);
             this.label16.Name = "label16";
-            this.label16.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.label16.Size = new System.Drawing.Size(130, 31);
+            this.label16.Padding = new System.Windows.Forms.Padding(7, 5, 7, 6);
+            this.label16.Size = new System.Drawing.Size(169, 39);
             this.label16.TabIndex = 23;
             this.label16.Text = "Source  MFC";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -786,11 +787,11 @@ namespace MyTest
             this.label23.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.label23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label23.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(0, 62);
+            this.label23.Location = new System.Drawing.Point(0, 78);
             this.label23.Margin = new System.Windows.Forms.Padding(0);
             this.label23.Name = "label23";
-            this.label23.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.label23.Size = new System.Drawing.Size(140, 31);
+            this.label23.Padding = new System.Windows.Forms.Padding(7, 5, 7, 6);
+            this.label23.Size = new System.Drawing.Size(182, 39);
             this.label23.TabIndex = 30;
             this.label23.Text = "Total   Flow";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -799,10 +800,10 @@ namespace MyTest
             // 
             this.flowLayoutPanel17.Controls.Add(this.tableLayoutPanel4);
             this.flowLayoutPanel17.Controls.Add(this.tableLayoutPanel5);
-            this.flowLayoutPanel17.Location = new System.Drawing.Point(160, 62);
+            this.flowLayoutPanel17.Location = new System.Drawing.Point(213, 78);
             this.flowLayoutPanel17.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel17.Name = "flowLayoutPanel17";
-            this.flowLayoutPanel17.Size = new System.Drawing.Size(516, 93);
+            this.flowLayoutPanel17.Size = new System.Drawing.Size(688, 116);
             this.flowLayoutPanel17.TabIndex = 26;
             // 
             // tableLayoutPanel4
@@ -824,7 +825,7 @@ namespace MyTest
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(452, 93);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(603, 116);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // label_Measure4
@@ -832,11 +833,11 @@ namespace MyTest
             this.label_Measure4.AutoSize = true;
             this.label_Measure4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label_Measure4.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Measure4.Location = new System.Drawing.Point(226, 31);
+            this.label_Measure4.Location = new System.Drawing.Point(301, 38);
             this.label_Measure4.Margin = new System.Windows.Forms.Padding(0);
             this.label_Measure4.Name = "label_Measure4";
-            this.label_Measure4.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.label_Measure4.Size = new System.Drawing.Size(40, 31);
+            this.label_Measure4.Padding = new System.Windows.Forms.Padding(7, 5, 7, 6);
+            this.label_Measure4.Size = new System.Drawing.Size(52, 38);
             this.label_Measure4.TabIndex = 26;
             this.label_Measure4.Text = "--";
             this.label_Measure4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -846,11 +847,11 @@ namespace MyTest
             this.label_Measure2.AutoSize = true;
             this.label_Measure2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label_Measure2.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Measure2.Location = new System.Drawing.Point(226, 0);
+            this.label_Measure2.Location = new System.Drawing.Point(301, 0);
             this.label_Measure2.Margin = new System.Windows.Forms.Padding(0);
             this.label_Measure2.Name = "label_Measure2";
-            this.label_Measure2.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.label_Measure2.Size = new System.Drawing.Size(40, 31);
+            this.label_Measure2.Padding = new System.Windows.Forms.Padding(7, 5, 7, 6);
+            this.label_Measure2.Size = new System.Drawing.Size(52, 38);
             this.label_Measure2.TabIndex = 29;
             this.label_Measure2.Text = "--";
             this.label_Measure2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -860,11 +861,11 @@ namespace MyTest
             this.label_Measure3.AutoSize = true;
             this.label_Measure3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label_Measure3.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Measure3.Location = new System.Drawing.Point(0, 31);
+            this.label_Measure3.Location = new System.Drawing.Point(0, 38);
             this.label_Measure3.Margin = new System.Windows.Forms.Padding(0);
             this.label_Measure3.Name = "label_Measure3";
-            this.label_Measure3.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.label_Measure3.Size = new System.Drawing.Size(40, 31);
+            this.label_Measure3.Padding = new System.Windows.Forms.Padding(7, 5, 7, 6);
+            this.label_Measure3.Size = new System.Drawing.Size(52, 38);
             this.label_Measure3.TabIndex = 25;
             this.label_Measure3.Text = "--";
             this.label_Measure3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -877,8 +878,8 @@ namespace MyTest
             this.label_Measure1.Location = new System.Drawing.Point(0, 0);
             this.label_Measure1.Margin = new System.Windows.Forms.Padding(0);
             this.label_Measure1.Name = "label_Measure1";
-            this.label_Measure1.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.label_Measure1.Size = new System.Drawing.Size(40, 31);
+            this.label_Measure1.Padding = new System.Windows.Forms.Padding(7, 5, 7, 6);
+            this.label_Measure1.Size = new System.Drawing.Size(52, 38);
             this.label_Measure1.TabIndex = 24;
             this.label_Measure1.Text = "--";
             this.label_Measure1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -888,11 +889,11 @@ namespace MyTest
             this.label_Measure5.AutoSize = true;
             this.label_Measure5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label_Measure5.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Measure5.Location = new System.Drawing.Point(0, 62);
+            this.label_Measure5.Location = new System.Drawing.Point(0, 76);
             this.label_Measure5.Margin = new System.Windows.Forms.Padding(0);
             this.label_Measure5.Name = "label_Measure5";
-            this.label_Measure5.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.label_Measure5.Size = new System.Drawing.Size(40, 31);
+            this.label_Measure5.Padding = new System.Windows.Forms.Padding(7, 5, 7, 6);
+            this.label_Measure5.Size = new System.Drawing.Size(52, 39);
             this.label_Measure5.TabIndex = 31;
             this.label_Measure5.Text = "--";
             this.label_Measure5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -902,11 +903,11 @@ namespace MyTest
             this.label_Measure6.AutoSize = true;
             this.label_Measure6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label_Measure6.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Measure6.Location = new System.Drawing.Point(226, 62);
+            this.label_Measure6.Location = new System.Drawing.Point(301, 76);
             this.label_Measure6.Margin = new System.Windows.Forms.Padding(0);
             this.label_Measure6.Name = "label_Measure6";
-            this.label_Measure6.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.label_Measure6.Size = new System.Drawing.Size(40, 31);
+            this.label_Measure6.Padding = new System.Windows.Forms.Padding(7, 5, 7, 6);
+            this.label_Measure6.Size = new System.Drawing.Size(52, 39);
             this.label_Measure6.TabIndex = 30;
             this.label_Measure6.Text = "--";
             this.label_Measure6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -919,14 +920,14 @@ namespace MyTest
             this.tableLayoutPanel5.Controls.Add(this.label20, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.label28, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.label29, 0, 2);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(452, 0);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(603, 0);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 3;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(64, 93);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(85, 116);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
             // label20
@@ -934,11 +935,11 @@ namespace MyTest
             this.label20.AutoSize = true;
             this.label20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label20.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(0, 31);
+            this.label20.Location = new System.Drawing.Point(0, 38);
             this.label20.Margin = new System.Windows.Forms.Padding(0);
             this.label20.Name = "label20";
-            this.label20.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.label20.Size = new System.Drawing.Size(60, 31);
+            this.label20.Padding = new System.Windows.Forms.Padding(7, 5, 7, 6);
+            this.label20.Size = new System.Drawing.Size(78, 38);
             this.label20.TabIndex = 25;
             this.label20.Text = "SCCM";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -951,8 +952,8 @@ namespace MyTest
             this.label28.Location = new System.Drawing.Point(0, 0);
             this.label28.Margin = new System.Windows.Forms.Padding(0);
             this.label28.Name = "label28";
-            this.label28.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.label28.Size = new System.Drawing.Size(60, 31);
+            this.label28.Padding = new System.Windows.Forms.Padding(7, 5, 7, 6);
+            this.label28.Size = new System.Drawing.Size(78, 38);
             this.label28.TabIndex = 29;
             this.label28.Text = "SLPM";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -962,11 +963,11 @@ namespace MyTest
             this.label29.AutoSize = true;
             this.label29.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label29.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(0, 62);
+            this.label29.Location = new System.Drawing.Point(0, 76);
             this.label29.Margin = new System.Windows.Forms.Padding(0);
             this.label29.Name = "label29";
-            this.label29.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.label29.Size = new System.Drawing.Size(60, 31);
+            this.label29.Padding = new System.Windows.Forms.Padding(7, 5, 7, 6);
+            this.label29.Size = new System.Drawing.Size(78, 39);
             this.label29.TabIndex = 30;
             this.label29.Text = "SLPM";
             this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -978,10 +979,10 @@ namespace MyTest
             this.btn_CheckNow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_CheckNow.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CheckNow.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_CheckNow.Location = new System.Drawing.Point(0, 329);
-            this.btn_CheckNow.Margin = new System.Windows.Forms.Padding(0, 20, 414, 0);
+            this.btn_CheckNow.Location = new System.Drawing.Point(0, 411);
+            this.btn_CheckNow.Margin = new System.Windows.Forms.Padding(0, 25, 552, 0);
             this.btn_CheckNow.Name = "btn_CheckNow";
-            this.btn_CheckNow.Size = new System.Drawing.Size(113, 31);
+            this.btn_CheckNow.Size = new System.Drawing.Size(151, 39);
             this.btn_CheckNow.TabIndex = 0;
             this.btn_CheckNow.Text = "Check now";
             this.btn_CheckNow.UseVisualStyleBackColor = false;
@@ -993,10 +994,10 @@ namespace MyTest
             this.btn_Purge.Enabled = false;
             this.btn_Purge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Purge.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btn_Purge.Location = new System.Drawing.Point(527, 329);
-            this.btn_Purge.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
+            this.btn_Purge.Location = new System.Drawing.Point(703, 411);
+            this.btn_Purge.Margin = new System.Windows.Forms.Padding(0, 25, 0, 0);
             this.btn_Purge.Name = "btn_Purge";
-            this.btn_Purge.Size = new System.Drawing.Size(113, 32);
+            this.btn_Purge.Size = new System.Drawing.Size(151, 40);
             this.btn_Purge.TabIndex = 2;
             this.btn_Purge.Text = "Purge";
             this.btn_Purge.UseVisualStyleBackColor = false;
@@ -1010,10 +1011,10 @@ namespace MyTest
             this.btn_PurgeLock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_PurgeLock.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
             this.btn_PurgeLock.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_PurgeLock.Location = new System.Drawing.Point(640, 329);
-            this.btn_PurgeLock.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
+            this.btn_PurgeLock.Location = new System.Drawing.Point(854, 411);
+            this.btn_PurgeLock.Margin = new System.Windows.Forms.Padding(0, 25, 0, 0);
             this.btn_PurgeLock.Name = "btn_PurgeLock";
-            this.btn_PurgeLock.Size = new System.Drawing.Size(35, 32);
+            this.btn_PurgeLock.Size = new System.Drawing.Size(47, 40);
             this.btn_PurgeLock.TabIndex = 1;
             this.btn_PurgeLock.UseVisualStyleBackColor = false;
             this.btn_PurgeLock.Click += new System.EventHandler(this.btn_PurgeLock_Click);
@@ -1023,10 +1024,10 @@ namespace MyTest
             this.flowLayoutPanel5.Controls.Add(this.flowLayoutPanel10);
             this.flowLayoutPanel5.Controls.Add(this.flowLayoutPanel19);
             this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(10, 71);
-            this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(10, 20, 10, 10);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(13, 89);
+            this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(13, 25, 13, 12);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(584, 519);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(779, 649);
             this.flowLayoutPanel5.TabIndex = 2;
             // 
             // flowLayoutPanel10
@@ -1037,9 +1038,9 @@ namespace MyTest
             this.flowLayoutPanel10.Controls.Add(this.Info_Box);
             this.flowLayoutPanel10.Controls.Add(this.brn_InfoCln);
             this.flowLayoutPanel10.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel10.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.flowLayoutPanel10.Margin = new System.Windows.Forms.Padding(0, 0, 13, 0);
             this.flowLayoutPanel10.Name = "flowLayoutPanel10";
-            this.flowLayoutPanel10.Size = new System.Drawing.Size(203, 517);
+            this.flowLayoutPanel10.Size = new System.Drawing.Size(271, 646);
             this.flowLayoutPanel10.TabIndex = 0;
             // 
             // flowLayoutPanel6
@@ -1057,7 +1058,7 @@ namespace MyTest
             this.flowLayoutPanel6.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
-            this.flowLayoutPanel6.Size = new System.Drawing.Size(202, 155);
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(269, 194);
             this.flowLayoutPanel6.TabIndex = 0;
             // 
             // label3
@@ -1068,8 +1069,8 @@ namespace MyTest
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Margin = new System.Windows.Forms.Padding(0);
             this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(5, 4, 16, 5);
-            this.label3.Size = new System.Drawing.Size(101, 31);
+            this.label3.Padding = new System.Windows.Forms.Padding(7, 5, 21, 6);
+            this.label3.Size = new System.Drawing.Size(131, 39);
             this.label3.TabIndex = 10;
             this.label3.Text = "Address";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1078,11 +1079,11 @@ namespace MyTest
             // 
             this.Addr_Box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Addr_Box.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Addr_Box.Location = new System.Drawing.Point(101, 0);
+            this.Addr_Box.Location = new System.Drawing.Point(131, 0);
             this.Addr_Box.Margin = new System.Windows.Forms.Padding(0);
             this.Addr_Box.Name = "Addr_Box";
             this.Addr_Box.ReadOnly = true;
-            this.Addr_Box.Size = new System.Drawing.Size(101, 31);
+            this.Addr_Box.Size = new System.Drawing.Size(134, 37);
             this.Addr_Box.TabIndex = 0;
             this.Addr_Box.TabStop = false;
             this.Addr_Box.Text = "001";
@@ -1092,11 +1093,11 @@ namespace MyTest
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.label4.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(0, 31);
+            this.label4.Location = new System.Drawing.Point(0, 39);
             this.label4.Margin = new System.Windows.Forms.Padding(0);
             this.label4.Name = "label4";
-            this.label4.Padding = new System.Windows.Forms.Padding(5, 4, 6, 5);
-            this.label4.Size = new System.Drawing.Size(101, 31);
+            this.label4.Padding = new System.Windows.Forms.Padding(7, 5, 8, 6);
+            this.label4.Size = new System.Drawing.Size(131, 39);
             this.label4.TabIndex = 11;
             this.label4.Text = "Sequence";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1105,10 +1106,10 @@ namespace MyTest
             // 
             this.Sequence_Box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Sequence_Box.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Sequence_Box.Location = new System.Drawing.Point(101, 31);
+            this.Sequence_Box.Location = new System.Drawing.Point(131, 39);
             this.Sequence_Box.Margin = new System.Windows.Forms.Padding(0);
             this.Sequence_Box.Name = "Sequence_Box";
-            this.Sequence_Box.Size = new System.Drawing.Size(101, 31);
+            this.Sequence_Box.Size = new System.Drawing.Size(134, 37);
             this.Sequence_Box.TabIndex = 1;
             this.Sequence_Box.Text = "C4H8";
             // 
@@ -1117,11 +1118,11 @@ namespace MyTest
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.label6.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(0, 62);
+            this.label6.Location = new System.Drawing.Point(0, 78);
             this.label6.Margin = new System.Windows.Forms.Padding(0);
             this.label6.Name = "label6";
-            this.label6.Padding = new System.Windows.Forms.Padding(5, 4, 36, 5);
-            this.label6.Size = new System.Drawing.Size(101, 31);
+            this.label6.Padding = new System.Windows.Forms.Padding(7, 5, 48, 6);
+            this.label6.Size = new System.Drawing.Size(132, 39);
             this.label6.TabIndex = 16;
             this.label6.Text = "Point";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1152,10 +1153,10 @@ namespace MyTest
             "18",
             "19",
             "20"});
-            this.Point_Box.Location = new System.Drawing.Point(101, 62);
+            this.Point_Box.Location = new System.Drawing.Point(132, 78);
             this.Point_Box.Margin = new System.Windows.Forms.Padding(0);
             this.Point_Box.Name = "Point_Box";
-            this.Point_Box.Size = new System.Drawing.Size(101, 31);
+            this.Point_Box.Size = new System.Drawing.Size(133, 37);
             this.Point_Box.TabIndex = 2;
             // 
             // label5
@@ -1163,11 +1164,11 @@ namespace MyTest
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.label5.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(0, 93);
+            this.label5.Location = new System.Drawing.Point(0, 117);
             this.label5.Margin = new System.Windows.Forms.Padding(0);
             this.label5.Name = "label5";
-            this.label5.Padding = new System.Windows.Forms.Padding(5, 4, 16, 5);
-            this.label5.Size = new System.Drawing.Size(101, 31);
+            this.label5.Padding = new System.Windows.Forms.Padding(7, 5, 21, 6);
+            this.label5.Size = new System.Drawing.Size(131, 39);
             this.label5.TabIndex = 12;
             this.label5.Text = "Time(m)";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1176,10 +1177,10 @@ namespace MyTest
             // 
             this.Time_Box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Time_Box.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Time_Box.Location = new System.Drawing.Point(101, 93);
+            this.Time_Box.Location = new System.Drawing.Point(131, 117);
             this.Time_Box.Margin = new System.Windows.Forms.Padding(0);
             this.Time_Box.Name = "Time_Box";
-            this.Time_Box.Size = new System.Drawing.Size(101, 31);
+            this.Time_Box.Size = new System.Drawing.Size(134, 37);
             this.Time_Box.TabIndex = 3;
             this.Time_Box.Text = "5";
             // 
@@ -1190,10 +1191,10 @@ namespace MyTest
             this.btn_MS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_MS.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_MS.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_MS.Location = new System.Drawing.Point(0, 124);
+            this.btn_MS.Location = new System.Drawing.Point(0, 156);
             this.btn_MS.Margin = new System.Windows.Forms.Padding(0);
             this.btn_MS.Name = "btn_MS";
-            this.btn_MS.Size = new System.Drawing.Size(101, 31);
+            this.btn_MS.Size = new System.Drawing.Size(135, 39);
             this.btn_MS.TabIndex = 4;
             this.btn_MS.Text = "MS";
             this.btn_MS.UseVisualStyleBackColor = false;
@@ -1206,10 +1207,10 @@ namespace MyTest
             this.btn_TS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_TS.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_TS.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_TS.Location = new System.Drawing.Point(101, 124);
+            this.btn_TS.Location = new System.Drawing.Point(0, 195);
             this.btn_TS.Margin = new System.Windows.Forms.Padding(0);
             this.btn_TS.Name = "btn_TS";
-            this.btn_TS.Size = new System.Drawing.Size(101, 31);
+            this.btn_TS.Size = new System.Drawing.Size(135, 39);
             this.btn_TS.TabIndex = 5;
             this.btn_TS.Text = "TS";
             this.btn_TS.UseVisualStyleBackColor = false;
@@ -1222,10 +1223,10 @@ namespace MyTest
             this.flowLayoutPanel8.Controls.Add(this.label12);
             this.flowLayoutPanel8.Controls.Add(this.FileName_Box);
             this.flowLayoutPanel8.Controls.Add(this.btn_cap);
-            this.flowLayoutPanel8.Location = new System.Drawing.Point(0, 155);
+            this.flowLayoutPanel8.Location = new System.Drawing.Point(0, 194);
             this.flowLayoutPanel8.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel8.Name = "flowLayoutPanel8";
-            this.flowLayoutPanel8.Size = new System.Drawing.Size(203, 198);
+            this.flowLayoutPanel8.Size = new System.Drawing.Size(271, 248);
             this.flowLayoutPanel8.TabIndex = 1;
             // 
             // label9
@@ -1234,11 +1235,11 @@ namespace MyTest
             this.label9.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label9.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(0, 62);
-            this.label9.Margin = new System.Windows.Forms.Padding(0, 62, 0, 0);
+            this.label9.Location = new System.Drawing.Point(0, 78);
+            this.label9.Margin = new System.Windows.Forms.Padding(0, 78, 0, 0);
             this.label9.Name = "label9";
-            this.label9.Padding = new System.Windows.Forms.Padding(5, 4, 0, 5);
-            this.label9.Size = new System.Drawing.Size(155, 31);
+            this.label9.Padding = new System.Windows.Forms.Padding(7, 5, 0, 6);
+            this.label9.Size = new System.Drawing.Size(201, 39);
             this.label9.TabIndex = 20;
             this.label9.Text = "Updata rate(s)";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1254,10 +1255,10 @@ namespace MyTest
             "20",
             "30",
             "60"});
-            this.UpdateRate_Box.Location = new System.Drawing.Point(155, 62);
-            this.UpdateRate_Box.Margin = new System.Windows.Forms.Padding(0, 62, 0, 0);
+            this.UpdateRate_Box.Location = new System.Drawing.Point(201, 78);
+            this.UpdateRate_Box.Margin = new System.Windows.Forms.Padding(0, 78, 0, 0);
             this.UpdateRate_Box.Name = "UpdateRate_Box";
-            this.UpdateRate_Box.Size = new System.Drawing.Size(48, 31);
+            this.UpdateRate_Box.Size = new System.Drawing.Size(63, 37);
             this.UpdateRate_Box.TabIndex = 0;
             // 
             // label12
@@ -1265,11 +1266,11 @@ namespace MyTest
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.label12.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(0, 93);
+            this.label12.Location = new System.Drawing.Point(0, 117);
             this.label12.Margin = new System.Windows.Forms.Padding(0);
             this.label12.Name = "label12";
-            this.label12.Padding = new System.Windows.Forms.Padding(5, 4, 78, 5);
-            this.label12.Size = new System.Drawing.Size(203, 31);
+            this.label12.Padding = new System.Windows.Forms.Padding(7, 5, 104, 6);
+            this.label12.Size = new System.Drawing.Size(266, 39);
             this.label12.TabIndex = 27;
             this.label12.Text = "File name :";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1277,10 +1278,10 @@ namespace MyTest
             // FileName_Box
             // 
             this.FileName_Box.Font = new System.Drawing.Font("Consolas", 15F);
-            this.FileName_Box.Location = new System.Drawing.Point(0, 124);
+            this.FileName_Box.Location = new System.Drawing.Point(0, 156);
             this.FileName_Box.Margin = new System.Windows.Forms.Padding(0);
             this.FileName_Box.Name = "FileName_Box";
-            this.FileName_Box.Size = new System.Drawing.Size(203, 31);
+            this.FileName_Box.Size = new System.Drawing.Size(269, 37);
             this.FileName_Box.TabIndex = 1;
             // 
             // btn_cap
@@ -1288,10 +1289,10 @@ namespace MyTest
             this.btn_cap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_cap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cap.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btn_cap.Location = new System.Drawing.Point(0, 155);
+            this.btn_cap.Location = new System.Drawing.Point(0, 193);
             this.btn_cap.Margin = new System.Windows.Forms.Padding(0);
             this.btn_cap.Name = "btn_cap";
-            this.btn_cap.Size = new System.Drawing.Size(202, 31);
+            this.btn_cap.Size = new System.Drawing.Size(269, 39);
             this.btn_cap.TabIndex = 2;
             this.btn_cap.Text = "Capture";
             this.btn_cap.UseVisualStyleBackColor = false;
@@ -1301,20 +1302,21 @@ namespace MyTest
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(0, 363);
-            this.label7.Margin = new System.Windows.Forms.Padding(0, 10, 5, 0);
+            this.label7.Location = new System.Drawing.Point(0, 454);
+            this.label7.Margin = new System.Windows.Forms.Padding(0, 12, 7, 0);
             this.label7.Name = "label7";
-            this.label7.Padding = new System.Windows.Forms.Padding(5, 4, 5, 5);
-            this.label7.Size = new System.Drawing.Size(80, 31);
+            this.label7.Padding = new System.Windows.Forms.Padding(7, 5, 7, 6);
+            this.label7.Size = new System.Drawing.Size(104, 39);
             this.label7.TabIndex = 23;
             this.label7.Text = "Info :";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // brn_InfoCln
             // 
-            this.brn_InfoCln.Location = new System.Drawing.Point(3, 491);
+            this.brn_InfoCln.Location = new System.Drawing.Point(4, 614);
+            this.brn_InfoCln.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.brn_InfoCln.Name = "brn_InfoCln";
-            this.brn_InfoCln.Size = new System.Drawing.Size(75, 23);
+            this.brn_InfoCln.Size = new System.Drawing.Size(100, 29);
             this.brn_InfoCln.TabIndex = 25;
             this.brn_InfoCln.TabStop = false;
             this.brn_InfoCln.Text = "clean";
@@ -1327,10 +1329,10 @@ namespace MyTest
             this.flowLayoutPanel19.Controls.Add(this.btn_CmdStart);
             this.flowLayoutPanel19.Controls.Add(this.btn_CmdStop);
             this.flowLayoutPanel19.Controls.Add(this.btn_ClnList);
-            this.flowLayoutPanel19.Location = new System.Drawing.Point(223, 0);
-            this.flowLayoutPanel19.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.flowLayoutPanel19.Location = new System.Drawing.Point(297, 0);
+            this.flowLayoutPanel19.Margin = new System.Windows.Forms.Padding(13, 0, 0, 0);
             this.flowLayoutPanel19.Name = "flowLayoutPanel19";
-            this.flowLayoutPanel19.Size = new System.Drawing.Size(361, 353);
+            this.flowLayoutPanel19.Size = new System.Drawing.Size(481, 441);
             this.flowLayoutPanel19.TabIndex = 1;
             // 
             // listView1
@@ -1343,7 +1345,7 @@ namespace MyTest
             this.listView1.Location = new System.Drawing.Point(0, 0);
             this.listView1.Margin = new System.Windows.Forms.Padding(0);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(361, 279);
+            this.listView1.Size = new System.Drawing.Size(480, 348);
             this.listView1.TabIndex = 3;
             this.listView1.TabStop = false;
             this.listView1.UseCompatibleStateImageBehavior = false;
@@ -1365,10 +1367,10 @@ namespace MyTest
             this.btn_CmdStop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_CmdStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_CmdStop.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btn_CmdStop.Location = new System.Drawing.Point(180, 279);
+            this.btn_CmdStop.Location = new System.Drawing.Point(240, 348);
             this.btn_CmdStop.Margin = new System.Windows.Forms.Padding(0);
             this.btn_CmdStop.Name = "btn_CmdStop";
-            this.btn_CmdStop.Size = new System.Drawing.Size(181, 32);
+            this.btn_CmdStop.Size = new System.Drawing.Size(241, 40);
             this.btn_CmdStop.TabIndex = 1;
             this.btn_CmdStop.Text = "Stop";
             this.btn_CmdStop.UseVisualStyleBackColor = false;
@@ -1379,10 +1381,10 @@ namespace MyTest
             this.btn_ClnList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_ClnList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ClnList.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btn_ClnList.Location = new System.Drawing.Point(0, 311);
+            this.btn_ClnList.Location = new System.Drawing.Point(0, 388);
             this.btn_ClnList.Margin = new System.Windows.Forms.Padding(0);
             this.btn_ClnList.Name = "btn_ClnList";
-            this.btn_ClnList.Size = new System.Drawing.Size(361, 30);
+            this.btn_ClnList.Size = new System.Drawing.Size(481, 38);
             this.btn_ClnList.TabIndex = 2;
             this.btn_ClnList.Text = "Clean list";
             this.btn_ClnList.UseVisualStyleBackColor = false;
@@ -1398,12 +1400,13 @@ namespace MyTest
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1304, 603);
+            this.ClientSize = new System.Drawing.Size(1739, 754);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "4010Auto";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);

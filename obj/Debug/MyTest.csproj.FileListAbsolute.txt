@@ -18,3 +18,13 @@ D:\Intern\mytest\WindowsFromsApp_test\MyTest\obj\Debug\MyTest.pdb
 D:\Intern\mytest\WindowsFromsApp_test\MyTest\bin\Debug\MyTest.exe.config
 D:\Intern\mytest\WindowsFromsApp_test\MyTest\bin\Debug\MyTest.exe
 D:\Intern\mytest\WindowsFromsApp_test\MyTest\bin\Debug\MyTest.pdb
+D:\Gan\Fixture and GB code\sabio 4010 UI\bin\Debug\MyTest.exe.config
+D:\Gan\Fixture and GB code\sabio 4010 UI\bin\Debug\MyTest.exe
+D:\Gan\Fixture and GB code\sabio 4010 UI\bin\Debug\MyTest.pdb
+D:\Gan\Fixture and GB code\sabio 4010 UI\obj\Debug\MyTest.csproj.AssemblyReference.cache
+D:\Gan\Fixture and GB code\sabio 4010 UI\obj\Debug\MyTest.Form1.resources
+D:\Gan\Fixture and GB code\sabio 4010 UI\obj\Debug\MyTest.Properties.Resources.resources
+D:\Gan\Fixture and GB code\sabio 4010 UI\obj\Debug\MyTest.csproj.GenerateResource.cache
+D:\Gan\Fixture and GB code\sabio 4010 UI\obj\Debug\MyTest.csproj.CoreCompileInputs.cache
+D:\Gan\Fixture and GB code\sabio 4010 UI\obj\Debug\MyTest.exe
+D:\Gan\Fixture and GB code\sabio 4010 UI\obj\Debug\MyTest.pdb
